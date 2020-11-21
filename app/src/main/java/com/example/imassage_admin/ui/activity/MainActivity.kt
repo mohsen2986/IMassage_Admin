@@ -1,7 +1,8 @@
-package com.example.imassage_admin
+package com.example.imassage_admin.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.imassage_admin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
