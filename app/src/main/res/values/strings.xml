@@ -86,6 +86,8 @@
     <string name="insert_image">افزودن عکس</string>
     <string name="desc">متن</string>
     <string name="save">ذخیره کردن</string>
+    <string name="edit_image">تغییر عکس</string>
+    <string name="reserved_at">رزرو شده‌های</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
