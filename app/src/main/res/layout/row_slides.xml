@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_800"
+        app:strokeWidth="@dimen/margin_1_1_2_3"
+        app:strokeColor="@color/overlay_dark_40"
+        app:cardCornerRadius="32dp"
+        android:layout_margin="@dimen/margin_4_4_4_8"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/slider_height_160_184_200_256"
+            >
+
+            <ImageView
+                android:id="@+id/row_slides_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic"/>
+
+            <ImageView
+                android:id="@+id/row_slides_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8_12_16_20"
+                android:layout_marginStart="@dimen/margin_8_12_16_20"
+                android:background="@drawable/back_circle_white"
+                android:padding="@dimen/margin_8_8_8_16"
+                android:tint="@color/black_low"
+                android:elevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/row_slides_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_8_16_16_32"
+                android:paddingTop="@dimen/margin_4_6_8_12"
+                android:paddingBottom="@dimen/margin_4_6_8_12"
+                android:paddingEnd="@dimen/margin_8_12_16_32"
+                android:paddingStart="@dimen/margin_8_12_16_32"
+                android:textStyle="bold"
+                android:textColor="@color/black_high"
+                tools:text="آی ماساژ جلوه ای نو در ماساژ"
+                android:textSize="@dimen/text_14_16_18_24"
+                android:background="@drawable/slider_text_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -50,9 +50,9 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
         ActivityCompat.requestPermissions(activity!!, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE) ,1)
     }
     private fun bindUI() = launch{
-        main_txt.setOnClickListener {
+        /*main_txt.setOnClickListener {
             navController.navigate(R.id.action_mainPageFragment_to_aboutUsFragment)
-        }
+        }*/
     }
     private fun UIActions(){
         val onClick = View.OnClickListener { view: View? ->
