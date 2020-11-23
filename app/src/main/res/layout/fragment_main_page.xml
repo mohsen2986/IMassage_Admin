@@ -1,17 +1,394 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.mainPage.MainPageFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/main_txt"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello"
-        />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.fragment.mainPage.MainPageFragment">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/fra_main_page_appBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/appbar_height_64_68_72_96"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/appbar_height_64_68_72_96"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    android:background="@color/pink_asli"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/fra_main_page_hello_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.TextView.normal_16"
+                        android:textColor="@color/blue_50"
+                        android:textSize="@dimen/text_14_16_16_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="سلام حسین" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_page_curve_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fra_main_page_appBar">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:text="@string/next_reservation"
+                    android:textColor="@color/blue_50"
+                    android:textSize="@dimen/text_14_16_16_24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fra_main_page_next_go_to_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/margin_12_16_16_32"
+                    android:paddingVertical="@dimen/margin_12_16_16_32"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView5">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="@dimen/width_88_96_104"
+                    android:layout_height="@dimen/width_88_96_104"
+                    app:cardCornerRadius="@dimen/margin_16_24_32_40"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/blue_50"
+                    app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                    <ImageView
+                        android:id="@+id/fra_main_page_next_gender_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_circle_white"
+                        android:scaleType="centerCrop"
+                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8_8_8_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                    <TextView
+                        android:id="@+id/fra_main_page_next_name_family"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue_50"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/fra_main_page_next_gender"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="حسین نیازی کاریزک" />
+
+                    <TextView
+                        android:id="@+id/fra_main_page_next_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_4_4_4_8"
+                        android:textColor="@color/blue_50"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/fra_main_page_next_name_family"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="آقای" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/fra_main_page_next_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4_6_8_12"
+                    android:drawableEnd="@drawable/ic_clock_main_page"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:textColor="@color/blue_50"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                    tools:text="16:00" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8_12_16_20"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:text="@string/reservation"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_16_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/fra_main_page_recycler"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8_12_16_20"
+                        android:layoutDirection="rtl"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4"
+                        tools:listitem="@layout/row_days" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_slider"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/margin_8_8_8_16"
+                        android:layout_marginEnd="@dimen/margin_4_4_4_8"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fra_main_page_aboutUs"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/about_us"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_aboutUs"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/margin_4_4_4_8"
+                        android:layout_marginTop="@dimen/margin_12_16_16_32"
+                        android:layout_marginEnd="@dimen/margin_8_8_8_16"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintDimensionRatio="w,1:2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/fra_main_page_slider"
+                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_recycler"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/slider"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_package"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_massage"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_main_page_slider"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/fra_main_page_slider"
+                        app:layout_constraintTop_toTopOf="@+id/fra_main_page_massage"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/packageee"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_massage"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/margin_8_8_8_16"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintDimensionRatio="w,1:2"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_slider"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/massagee"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_users"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_payments"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_main_page_slider"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/fra_main_page_slider"
+                        app:layout_constraintTop_toTopOf="@+id/fra_main_page_payments"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/users"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_payments"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/margin_8_8_8_16"
+                        android:backgroundTint="@color/blue_50"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintDimensionRatio="w,1:2"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_massage"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/bills"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

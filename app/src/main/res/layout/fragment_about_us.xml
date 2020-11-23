@@ -1,34 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="aboutUs"
-            type="com.example.imassage_admin.data.model.AboutUs"
-            />
+            type="com.example.imassage_admin.data.model.AboutUs" />
     </data>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.aboutUs.AboutUsFragment">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:loadImage="@{aboutUs.image}"
-        />
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@{aboutUs.description}"
-        />
-    <TextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EDIT"
-        android:textSize="33dp"
-        android:layout_gravity="center"
-        />
-</FrameLayout>
+        tools:context=".ui.fragment.aboutUs.AboutUsFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView2"
+            android:layout_width="@dimen/width_120_152_176_304"
+            android:layout_height="@dimen/width_120_152_176_304"
+            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/overlay_dark_30"
+            app:strokeWidth="@dimen/margin_1_1_2_3">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/width_88_96_104"
+                android:layout_height="@dimen/width_88_96_104"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_image" />
+
+            <ImageView
+                android:id="@+id/fra_aboutUs_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:srcCompat="@tools:sample/avatars" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fra_aboutUs_insertImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:backgroundTint="@color/blue_800"
+            android:paddingVertical="@dimen/margin_8_12_16_20"
+            android:text="@string/edit_image"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_image"
+            app:iconSize="@dimen/width_24_24_28_40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:hint="@string/desc"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fra_aboutUs_insertImage"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_aboutUs_text"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="آی ماساژ"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_16_20" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fra_aboutUs_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:paddingVertical="@dimen/margin_8_12_16_20"
+            android:text="@string/save"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
