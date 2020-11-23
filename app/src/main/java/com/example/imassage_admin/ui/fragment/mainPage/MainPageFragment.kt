@@ -51,7 +51,7 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
     }
     private fun bindUI() = launch{
         main_txt.setOnClickListener {
-            navController.navigate(R.id.action_mainPageFragment_to_aboutUsFragment)
+            navController.navigate(R.id.action_mainPageFragment_to_usersFragment)
         }
     }
     private fun UIActions(){
