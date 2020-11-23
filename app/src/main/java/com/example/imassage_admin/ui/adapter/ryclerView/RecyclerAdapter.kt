@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Boarder
+import com.example.imassage_admin.databinding.RowSlidesBinding
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 
 class RecyclerAdapter<T>(
@@ -18,9 +20,14 @@ class RecyclerAdapter<T>(
         notifyDataSetChanged()
     }
     private lateinit var layoutInflater: LayoutInflater
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         layoutInflater = LayoutInflater.from(parent.context)
         return when(viewType){
+            R.layout.row_slides -> SliderViewHolder(
+                    RowSlidesBinding.inflate(layoutInflater , parent , false)
+            )
+
             else -> throw IllegalStateException("the type is invalid!!")
         }
     }
@@ -29,12 +36,14 @@ class RecyclerAdapter<T>(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-
+            is SliderViewHolder -> holder.bind(datas[position] as Boarder, onClickHandler = onClickHandler)
         }
     }
 
     override fun getItemViewType(position: Int): Int =
             when(datas[0]){
+                is Boarder -> R.layout.row_slides
+
                 else -> throw IllegalStateException("the type is invalid!")
             }
 }
