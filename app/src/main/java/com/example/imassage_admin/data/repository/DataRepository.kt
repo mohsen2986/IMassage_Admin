@@ -29,4 +29,46 @@ class DataRepository(
 //        return apiInterface.updateAboutUs1( requestBody , id = "1")
 //    }
 
+    // sliders
+    suspend fun getSliders() =
+            apiInterface.sliders()
+
+    suspend fun uploadSlider(file: MultipartBody.Part , title: String , description: String) =
+            apiInterface.uploadSlider(file , title ,  description)
+
+    suspend fun deleteSlider(id: String) =
+            apiInterface.deleteSlider(id)
+
+    // massages
+    suspend fun getMassages() =
+        apiInterface.massages()
+
+    suspend fun uploadMassage(image: MultipartBody.Part , name: String , cost: String , length: String , description: String) =
+        apiInterface.uploadMassage(image , name , cost , length , description)
+
+    suspend fun deleteMassage(id: String) =
+        apiInterface.deleteMassage(id)
+
+    // packages
+    suspend fun getPackages() =
+        apiInterface.packages()
+
+    suspend fun uploadPackage(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String) =
+        apiInterface.uploadPackage(image , name , description , cost , massageId)
+
+    suspend fun deletePackage(id: String) =
+        apiInterface.deletePackage(id)
+
+    // questions
+    suspend fun question() =
+            apiInterface.questions()
+
+    suspend fun addQuestion(question: String) =
+            apiInterface.uploadQuestion(question)
+
+    suspend fun deleteQuestion(id: String) =
+            apiInterface.deleteQuestion(id)
+    // users
+    suspend fun users(page: Int?) =
+            apiInterface.users(page)
 }
