@@ -7,6 +7,11 @@ import com.example.imassage_admin.data.remote.api.ApiInterface
 import com.example.imassage_admin.data.repository.DataRepository
 import com.example.imassage_admin.ui.fragment.aboutUs.AboutUsViewModelFactory
 import com.example.imassage_admin.ui.fragment.mainPage.MainPageViewModelFactory
+import com.example.imassage_admin.ui.fragment.massage.MassageViewModelFactory
+import com.example.imassage_admin.ui.fragment.packages.PackageViewModelFactory
+import com.example.imassage_admin.ui.fragment.question.QuestionViewModelFactory
+import com.example.imassage_admin.ui.fragment.slider.SliderViewModelFactory
+import com.example.imassage_admin.ui.fragment.users.UsersViewModelFactory
 import com.facebook.stetho.Stetho
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -28,6 +33,11 @@ class IMassageAdminApplication(
         // fragment
         bind() from provider { MainPageViewModelFactory() }
         bind() from provider { AboutUsViewModelFactory(instance()) }
+        bind() from provider { SliderViewModelFactory(instance())}
+        bind() from provider { MassageViewModelFactory(instance())}
+        bind() from provider { PackageViewModelFactory(instance())}
+        bind() from provider { QuestionViewModelFactory(instance()) }
+        bind() from provider { UsersViewModelFactory(instance()) }
     }
 
     override fun onCreate() {
