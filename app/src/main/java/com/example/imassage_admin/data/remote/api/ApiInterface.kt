@@ -15,7 +15,7 @@ interface ApiInterface{
     @Multipart
     @POST("aboutUs")
     suspend fun uploadImage(
-            @Part file: MultipartBody.Part ,
+            @Part file: MultipartBody.Part? ,
             @Part("description") description: RequestBody
     ): NetworkResponse<AboutUs, ErrorResponse>
 
@@ -27,10 +27,17 @@ interface ApiInterface{
     @Multipart
     @POST("aboutUs/{id}")
     suspend fun updateAboutUs(
-        @Part file: MultipartBody.Part ,
+        @Part file: MultipartBody.Part? ,
         @Path("id") id: String ,
         @Query("_method") method: String = "PUT" ,
-        @Query("description") description_: String = "this is a test"
+        @Query("description") description: String?
+    ): NetworkResponse< AboutUs , ErrorResponse>
+
+    @POST("aboutUs/{id}")
+    suspend fun updateAboutUsDescription(
+            @Path("id") id: String ,
+            @Query("_method") method: String = "PUT" ,
+            @Query("description") description: String
     ): NetworkResponse< AboutUs , ErrorResponse>
 
     // sliders
