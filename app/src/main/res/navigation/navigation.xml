@@ -13,10 +13,59 @@
         <action
             android:id="@+id/action_mainPageFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_sliderFragment"
+            app:destination="@id/sliderFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_massageFragment"
+            app:destination="@id/massageFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_packagesFragment"
+            app:destination="@id/packagesFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
         android:name="com.example.imassage_admin.ui.fragment.aboutUs.AboutUsFragment"
         android:label="fragment_about_us"
         tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/sliderFragment"
+        android:name="com.example.imassage_admin.ui.fragment.slider.SliderFragment"
+        android:label="SliderFragment"
+        tools:layout="@layout/fragment_slider"
+        />
+    <fragment
+        android:id="@+id/configFragment"
+        android:name="com.example.imassage_admin.ui.fragment.config.ConfigFragment"
+        android:label="ConfigFragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.imassage_admin.ui.fragment.history.HistoryFragment"
+        android:label="HistoryFragment" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.imassage_admin.ui.fragment.question.QuestionFragment"
+        android:label="QuestionFragment" />
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.imassage_admin.ui.fragment.users.UsersFragment"
+        android:label="UsersFragment" />
+    <fragment
+        android:id="@+id/reservedFragment"
+        android:name="com.example.imassage_admin.ui.fragment.reserved.ReservedFragment"
+        android:label="ReservedFragment" />
+    <fragment
+        android:id="@+id/packagesFragment"
+        android:name="com.example.imassage_admin.ui.fragment.packages.PackagesFragment"
+        android:label="PackagesFragment" />
+    <fragment
+        android:id="@+id/massageFragment"
+        android:name="com.example.imassage_admin.ui.fragment.massage.MassageFragment"
+        android:label="MassageFragment" />
 </navigation>
