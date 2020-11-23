@@ -88,6 +88,8 @@
     <string name="save">ذخیره کردن</string>
     <string name="edit_image">تغییر عکس</string>
     <string name="reserved_at">رزرو شده‌های</string>
+    <string name="answers">پاسخ‌های</string>
+    <string name="add_package">افزودن پکیج</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
