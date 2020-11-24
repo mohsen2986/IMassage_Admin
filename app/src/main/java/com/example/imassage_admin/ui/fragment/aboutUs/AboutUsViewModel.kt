@@ -12,7 +12,10 @@ class AboutUsViewModel(
     suspend fun aboutUs() =
         dataRepository.aboutUs()
 
-    suspend fun aboutUsUpdate(file: MultipartBody.Part, description: RequestBody) =
+    suspend fun aboutUsUpdate(file: MultipartBody.Part?, description: String) =
         dataRepository.updateAboutUs(file , description)
+
+    suspend fun aboutUsUpdateDescription(description: String) =
+            dataRepository.updateAboutUsDescription(description)
 
 }

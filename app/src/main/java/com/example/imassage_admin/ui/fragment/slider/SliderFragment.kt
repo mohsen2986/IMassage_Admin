@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,9 +15,13 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Boarder
 import com.example.imassage_admin.databinding.FragmentSliderBinding
+import com.example.imassage_admin.ui.adapter.ryclerView.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.haroldadmin.cnradapter.NetworkResponse
+import kotlinx.android.synthetic.main.fragment_add_slider.*
 import kotlinx.android.synthetic.main.fragment_slider.*
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -44,6 +47,8 @@ class SliderFragment : ScopedFragment() , KodeinAware {
     private var postPath: String? = null
     private val REQUEST_PICK_PHOTO = 2
 
+    private lateinit var adapter :RecyclerAdapter<Boarder>
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -60,18 +65,19 @@ class SliderFragment : ScopedFragment() , KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(SliderViewModel::class.java)
+        initAdapters()
+        bindAdapters()
         bindUI()
+        uiAcitons()
 
-        val galleryIntent = Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
-        ttxx.setOnClickListener{
-        }
+//        val galleryIntent = Intent(Intent.ACTION_PICK,
+//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
     }
     private fun bindUI() = launch {
-        when(val callbeck = viewModel.deleteSlider("2")){
+        when(val callbeck = viewModel.sliders()){
             is NetworkResponse.Success ->
-                Log.e("Log__" , "${callbeck.body}")
+                adapter.datas = callbeck.body.boarders
         }
     }
     private fun upload() = launch {
@@ -85,14 +91,11 @@ class SliderFragment : ScopedFragment() , KodeinAware {
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
-                val description_ = "we are fcosiety"
+                val description = fra_add_slide_text.text.toString()
 
-                val description: RequestBody = RequestBody.create(
-                        MultipartBody.FORM, description_)
-
-                viewModel.uploadSlider(body , description_ , "hello friend !!")
+                viewModel.uploadSlider(body , "IMassage" , description)
             }else{
-                Toast.makeText(activity!!, "please select an image ", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity!!, "لطفان عکس را انتخاب کنید.", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -128,6 +131,44 @@ class SliderFragment : ScopedFragment() , KodeinAware {
             Toast.makeText(context!!, "Sorry, there was an error!", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    private fun initAdapters(){
+        adapter = RecyclerAdapter()
+        adapter.onClickHandler = object: OnCLickHandler<Boarder>{
+            override fun onClickItem(element: Boarder) {
+                deleteSlider(element.id)
+            }
+
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Boarder) {}
+        }
+    }
+    private fun bindAdapters(){
+        fra_slider_recycler.adapter = adapter
+    }
+    private fun deleteSlider(id: String)= launch {
+        when(val callback = viewModel.deleteSlider(id)){
+            is NetworkResponse.Success -> {
+                Toast.makeText(context, "حذف با موفقیت انجام شد.", Toast.LENGTH_SHORT).show()
+                bindUI()
+            }
+        }
+    }
+    private fun uiAcitons(){
+        binding.onClick = object : OnCLickHandler<Nothing> {
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view) {
+                    fra_slider_add_slide ->
+                        navController.navigate(R.id.action_sliderFragment_to_addSliderFragment
+                        )
+                }
+
+            }
+
+        }
     }
 
 }

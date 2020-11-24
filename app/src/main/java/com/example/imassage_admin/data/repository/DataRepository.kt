@@ -14,20 +14,15 @@ import org.json.JSONObject
 class DataRepository(
     private val apiInterface: ApiInterface
 ){
-
+    // ABOUT US
     suspend fun aboutUs() =
         apiInterface.aboutUs("1")
 
-    suspend fun updateAboutUs(file: MultipartBody.Part , description: RequestBody) =
-        apiInterface.updateAboutUs(file = file  , id = "1")
+    suspend fun updateAboutUs(file: MultipartBody.Part? , description: String) =
+        apiInterface.updateAboutUs(file = file  , id = "1" , description = description)
 
-//    suspend fun updateAboutUs(file: MultipartBody.Part , description: RequestBody): NetworkResponse<AboutUs, ErrorResponse> {
-//        val jobj = JSONObject()
-//        jobj.put("description" , "test")
-//        val requestBody = jobj.toString().toRequestBody("application/json".toMediaTypeOrNull())
-//
-//        return apiInterface.updateAboutUs1( requestBody , id = "1")
-//    }
+    suspend fun updateAboutUsDescription(description: String) =
+            apiInterface.updateAboutUsDescription(id = "1" , description = description)
 
     // sliders
     suspend fun getSliders() =

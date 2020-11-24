@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="slide"
+            type="com.example.imassage_admin.data.model.Boarder"
+            />
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -27,6 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
+                android:loadImage="@{slide.image}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +52,7 @@
                 android:padding="@dimen/margin_8_8_8_16"
                 android:tint="@color/black_low"
                 android:elevation="4dp"
+                android:onClick="@{(v) -> onClick.onClickItem(slide)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_delete" />
@@ -58,11 +68,13 @@
                 android:paddingStart="@dimen/margin_8_12_16_32"
                 android:textStyle="bold"
                 android:textColor="@color/black_high"
+                android:text="@{slide.description}"
                 tools:text="آی ماساژ جلوه ای نو در ماساژ"
                 android:textSize="@dimen/text_14_16_18_24"
                 android:background="@drawable/slider_text_back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

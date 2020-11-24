@@ -1,11 +1,10 @@
-package com.example.imassage_admin.ui.fragment.aboutUs
+package com.example.imassage_admin.ui.fragment.slider.addSlider
 
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.os.NetworkOnMainThreadException
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,11 +15,10 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
-import com.example.imassage_admin.databinding.FragmentAboutUsBinding
+import com.example.imassage_admin.databinding.FragmentAddSliderBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
-import com.haroldadmin.cnradapter.NetworkResponse
-import kotlinx.android.synthetic.main.fragment_about_us.*
+import kotlinx.android.synthetic.main.fragment_add_slider.*
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -31,74 +29,43 @@ import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 import java.io.File
 
-class AboutUsFragment : ScopedFragment(), KodeinAware {
+class AddSliderFragment : ScopedFragment() , KodeinAware{
     override val kodein: Kodein by closestKodein()
-    private val viewModelFactory: AboutUsViewModelFactory by instance()
+    private val viewModelFactory: AddSliderViewModelFactory by instance()
 
-    private lateinit var viewModel: AboutUsViewModel
+    private lateinit var viewModel: AddSliderViewModel
+    private lateinit var binding: FragmentAddSliderBinding
     private lateinit var navController: NavController
-    private lateinit var binding: FragmentAboutUsBinding
 
+    // --FROM DATA
     private var fileUri: Uri? = null
     private var mediaPath: String? = null
     private var postPath: String? = null
     private val REQUEST_PICK_PHOTO = 2
 
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentAboutUsBinding.inflate(inflater , container , false)
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+           savedInstanceState: Bundle?): View? {
+        binding = FragmentAddSliderBinding.inflate(inflater, container ,false)
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this , viewModelFactory).get(AboutUsViewModel::class.java)
+        viewModel = ViewModelProvider(this , viewModelFactory).get(AddSliderViewModel::class.java)
         bindUI()
         uiActions()
+    }
+    private fun bindUI() = launch{
 
     }
-    fun bindUI() = launch {
-        when(val callback = viewModel.aboutUs()){
-            is NetworkResponse.Success ->
-                binding.aboutUs = callback.body
-        }
-    }
-    fun update() = launch{
-        postPath?.let {
-            if (it.isNotEmpty()){
-                val imageFile = File(postPath!!)
-
-                val requestBody = RequestBody.create(
-                        activity!!.contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
-                        imageFile
-                )
-                val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
-
-//                val description_ = "we are fcosiety"
-//                val description: RequestBody = RequestBody.create(
-//                        MultipartBody.FORM, description_)
-                val description = fra_aboutUs_text.text.toString()
-
-                viewModel.aboutUsUpdate(body , description)
-            }else{
-                Toast.makeText(activity!!, "لطفان عکس را انتخاب کنید.", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-    fun getImageFromGallery(){
-        val galleryIntent = Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
@@ -131,31 +98,54 @@ class AboutUsFragment : ScopedFragment(), KodeinAware {
         }
 
     }
+    private fun getImageFromGallery(){
+        val galleryIntent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
+    }
+    private fun upload() = launch {
+        postPath?.let {
+            if (it.isNotEmpty()){
+                val imageFile = File(postPath!!)
+
+                val requestBody = RequestBody.create(
+                    activity!!.contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
+                    imageFile
+                )
+                val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
+
+                val description_ = "we are fcosiety"
+
+                val description = fra_add_slide_text.text.toString()
+
+                viewModel.uploadSlider(body , description_ , description)
+            }else{
+                Toast.makeText(activity!!, "please select an image ", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
     private fun uiActions(){
-        binding.onClickHandler = object: OnCLickHandler<Nothing> {
+        binding.onClick = object: OnCLickHandler<Nothing>{
             override fun onClickItem(element: Nothing) {}
             override fun onClickView(view: View, element: Nothing) {}
-
             override fun onClick(view: View) {
-                when(view) {
-                    fra_aboutUs_insertImage ->
+                when(view){
+                    fra_add_slide_insertImage ->{
                         getImageFromGallery()
-                    fra_aboutUs_save ->
-                        if(fileUri != null) update() else uploadText()
+                    }
+                    fra_add_slide_submit ->{
+                        if(fra_add_slide_text.text?.isNotEmpty()!! && mediaPath != null)
+                            upload()
+                        else
+                            Toast.makeText(context , "فایل و متن خود را وارد کنید.", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+
+
         }
     }
-    private fun uploadText() = launch {
-        if(fra_aboutUs_text.text!!.isNotEmpty()) {
-            when (val callback = viewModel.aboutUsUpdateDescription(fra_aboutUs_text.text.toString())) {
-                is NetworkResponse.Success -> {
-                    Toast.makeText(context, "متن تغییر پیدا کرد." , Toast.LENGTH_SHORT).show()
-                }
-            }
-        }else{
-            Toast.makeText(context, "متن را پر کنید" , Toast.LENGTH_SHORT).show()
-        }
-    }
+
 
 }
