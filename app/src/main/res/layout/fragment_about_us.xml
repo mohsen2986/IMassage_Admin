@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    >
     <data>
-
         <variable
             name="aboutUs"
-            type="com.example.imassage_admin.data.model.AboutUs" />
+            type="com.example.imassage_admin.data.model.AboutUs"
+            />
+        <variable
+            name="onClickHandler"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,13 +41,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_image" />
+                app:srcCompat="@drawable/ic_image"
+                />
 
             <ImageView
                 android:id="@+id/fra_aboutUs_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:loadImage="@{aboutUs.image}"
+                tools:srcCompat="@tools:sample/avatars"
+                />
+<!--            android:loadImage="@{aboutUs.image}"-->
+
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
@@ -57,6 +67,7 @@
             android:text="@string/edit_image"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:onClick="@{onClickHandler::onClick}"
             app:icon="@drawable/ic_image"
             app:iconSize="@dimen/width_24_24_28_40"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,9 +94,10 @@
                 style="@style/TextAppearance.AppCompat.TextView.bold_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="آی ماساژ"
                 android:textAlignment="viewStart"
-                android:textSize="@dimen/text_14_16_16_20" />
+                android:textSize="@dimen/text_14_16_16_20"
+                android:text="@{aboutUs.description}"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,8 +111,10 @@
             android:text="@string/save"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:onClick="@{onClickHandler::onClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
