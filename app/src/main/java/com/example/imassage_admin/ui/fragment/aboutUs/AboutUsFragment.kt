@@ -18,6 +18,7 @@ import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
 import com.example.imassage_admin.databinding.FragmentAboutUsBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.android.synthetic.main.fragment_about_us.*
 import kotlinx.coroutines.launch
@@ -61,17 +62,13 @@ class AboutUsFragment : ScopedFragment(), KodeinAware {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(AboutUsViewModel::class.java)
         bindUI()
-        val galleryIntent = Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
+        uiActions()
+
     }
     fun bindUI() = launch {
         when(val callback = viewModel.aboutUs()){
             is NetworkResponse.Success ->
                 binding.aboutUs = callback.body
-        }
-        txt.setOnClickListener{
-           update()
         }
     }
     fun update() = launch{
@@ -85,16 +82,21 @@ class AboutUsFragment : ScopedFragment(), KodeinAware {
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
-                val description_ = "we are fcosiety"
-
-                val description: RequestBody = RequestBody.create(
-                        MultipartBody.FORM, description_)
+//                val description_ = "we are fcosiety"
+//                val description: RequestBody = RequestBody.create(
+//                        MultipartBody.FORM, description_)
+                val description = fra_aboutUs_text.text.toString()
 
                 viewModel.aboutUsUpdate(body , description)
             }else{
-                Toast.makeText(activity!!, "please select an image ", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity!!, "لطفان عکس را انتخاب کنید.", Toast.LENGTH_LONG).show()
             }
         }
+    }
+    fun getImageFromGallery(){
+        val galleryIntent = Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -128,6 +130,32 @@ class AboutUsFragment : ScopedFragment(), KodeinAware {
             Toast.makeText(context!!, "Sorry, there was an error!", Toast.LENGTH_LONG).show()
         }
 
+    }
+    private fun uiActions(){
+        binding.onClickHandler = object: OnCLickHandler<Nothing> {
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+
+            override fun onClick(view: View) {
+                when(view) {
+                    fra_aboutUs_insertImage ->
+                        getImageFromGallery()
+                    fra_aboutUs_save ->
+                        if(fileUri != null) update() else uploadText()
+                }
+            }
+        }
+    }
+    private fun uploadText() = launch {
+        if(fra_aboutUs_text.text!!.isNotEmpty()) {
+            when (val callback = viewModel.aboutUsUpdateDescription(fra_aboutUs_text.text.toString())) {
+                is NetworkResponse.Success -> {
+                    Toast.makeText(context, "متن تغییر پیدا کرد." , Toast.LENGTH_SHORT).show()
+                }
+            }
+        }else{
+            Toast.makeText(context, "متن را پر کنید" , Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
