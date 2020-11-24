@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/row_massage_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/row_packages_cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12_16_16_32"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        app:cardCornerRadius="@dimen/margin_12_16_16_32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/overlay_dark_40"
+        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+        <ImageView
+            android:id="@+id/row_massage_image"
+            android:layout_width="@dimen/road_72_80_96_120"
+            android:layout_height="@dimen/road_72_80_96_120"
+            android:layout_margin="@dimen/margin_1_1_2_3"
+            tools:srcCompat="@drawable/ic_massage"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--android:layout_marginTop="@dimen/margin_8_8_8_16"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"-->
+
+    <TextView
+        android:id="@+id/row_massage_massageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12_16_16_32"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:drawableEnd="@drawable/ic_massage"
+        android:drawablePadding="@dimen/margin_4_4_4_8"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="پکیج ویژه" />
+
+
+    <TextView
+        android:id="@+id/row_massage_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:drawableEnd="@drawable/ic_dollar"
+        android:drawablePadding="@dimen/margin_4_4_4_8"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/row_packages_cardView"
+        app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+        app:layout_constraintTop_toBottomOf="@+id/row_massage_massageName"
+        tools:text="99,000 تومان" />
+
+    <TextView
+        android:id="@+id/row_massage_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12_16_16_32"
+        android:layout_marginTop="@dimen/margin_8_8_8_16"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:layout_marginBottom="@dimen/margin_8_8_8_16"
+        android:maxLength="50"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_packages_cardView"
+        tools:text="@string/lorem_20" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
