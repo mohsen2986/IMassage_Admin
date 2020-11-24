@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/row_reserved_container"
+    android:id="@+id/row_packages_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="2dp"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/row_reserved_cardView"
+        android:id="@+id/row_packages_cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12_16_16_32"
@@ -22,76 +21,74 @@
         app:strokeWidth="@dimen/margin_1_1_2_3">
 
         <ImageView
-            android:id="@+id/row_reserved_user_image"
+            android:id="@+id/row_packages_image"
             android:layout_width="@dimen/road_72_80_96_120"
             android:layout_height="@dimen/road_72_80_96_120"
             android:layout_margin="@dimen/margin_1_1_2_3"
-            tools:srcCompat="@drawable/ic_woman"
+            tools:srcCompat="@drawable/ic_massage"
             />
     </com.google.android.material.card.MaterialCardView>
-
     <TextView
-        android:id="@+id/row_reserved_time"
+        android:id="@+id/row_packages_packageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12_16_16_32"
         android:layout_marginEnd="@dimen/margin_12_16_16_32"
-        android:drawableEnd="@drawable/ic_clock_row_reserved"
-        android:drawablePadding="@dimen/margin_4_4_4_8"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/row_reserved_cardView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="16:00" />
-
-    <TextView
-        android:id="@+id/row_reserved_name_family"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8_8_8_16"
-        android:layout_marginEnd="@dimen/margin_12_16_16_32"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/row_reserved_cardView"
-        app:layout_constraintTop_toBottomOf="@+id/row_reserved_time"
-        tools:text="آقای حسین نیازی" />
-
-    <TextView
-        android:id="@+id/row_reserved_massage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_12_16_16_32"
-        android:layout_marginTop="@dimen/margin_8_8_8_16"
-        android:layout_marginStart="@dimen/margin_12_16_16_32"
-        android:drawableEnd="@drawable/ic_massage"
-        android:drawablePadding="@dimen/margin_4_4_4_8"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/row_reserved_cardView"
-        tools:text="ماساژ سوپر سامورایی لش اضافه" />
-
-    <TextView
-        android:id="@+id/row_reserved_package"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_8_8_8_16"
-        android:layout_marginTop="@dimen/margin_4_4_4_8"
         android:drawableEnd="@drawable/ic_package"
         android:drawablePadding="@dimen/margin_4_4_4_8"
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="پکیج ویژه" />
+
+    <TextView
+        android:id="@+id/row_packages_massageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8_8_8_16"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        android:drawableEnd="@drawable/ic_massage"
+        android:drawablePadding="@dimen/margin_4_4_4_8"
+        app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+        app:layout_constraintTop_toBottomOf="@+id/row_packages_packageName"
+        tools:text="ماساژ فوق سامورایی" />
+
+    <TextView
+        android:id="@+id/row_packages_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8_8_8_16"
+        android:drawableEnd="@drawable/ic_dollar"
+        android:drawablePadding="@dimen/margin_4_4_4_8"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/row_packages_description"
+        tools:text="99,000 تومان" />
+
+    <TextView
+        android:id="@+id/row_packages_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_4_4_4_8"
+        android:layout_marginTop="@dimen/margin_8_8_8_16"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:layout_marginBottom="@dimen/margin_8_8_8_16"
+        android:maxLength="50"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/row_reserved_cardView"
-        app:layout_constraintStart_toStartOf="@+id/row_reserved_massage"
-        app:layout_constraintTop_toBottomOf="@+id/row_reserved_massage"
-        tools:text="آقای حسین نیازی" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/row_packages_cost"
+        app:layout_constraintTop_toBottomOf="@+id/row_packages_cardView"
+        tools:text="@string/lorem_20" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

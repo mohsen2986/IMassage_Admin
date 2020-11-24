@@ -8,6 +8,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/row_days_container"
         android:layout_width="@dimen/width_120_136_144_200"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue_800"

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:id="@+id/row_questions_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginHorizontal="@dimen/margin_4_4_4_8"
+    app:strokeColor="@color/overlay_dark_60"
+    app:strokeWidth="1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:text="@string/question"
+            android:textAppearance="@style/TextAppearance.AppCompat.TextView.bold_16"
+            android:textSize="@dimen/text_14_16_16_24"
+            android:textColor="@color/black_low"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/row_questions_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8_12_16_20"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_4_4_4_8"
+            android:text="@string/lorem_20"
+            android:textColor="@color/black_low"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_14_16_18_24"
+            app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:text="@string/answer"
+            android:textAppearance="@style/TextAppearance.AppCompat.TextView.bold_16"
+            android:textSize="@dimen/text_14_16_16_24"
+            android:textColor="@color/black_low"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_questions_question" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_4_4_4_8"
+            android:layout_marginStart="@dimen/margin_8_12_16_20"
+            app:layout_constraintEnd_toEndOf="@+id/row_questions_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+
+            <RadioButton
+                android:id="@+id/row_questions_answer_radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layoutDirection="rtl"
+                android:textColor="@color/black_high"
+                android:textSize="@dimen/text_14_16_18_24"
+                android:textStyle="bold"
+                tools:text="خیلی زیاد" />
+
+
+            <TextView
+                android:id="@+id/row_questions_answer_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4_4_4_8"
+                android:layout_marginBottom="@dimen/margin_8_12_16_20"
+                android:textColor="@color/black_high"
+                android:textSize="@dimen/text_14_16_18_24"
+                android:textStyle="bold"
+                tools:text="@string/lorem_50" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

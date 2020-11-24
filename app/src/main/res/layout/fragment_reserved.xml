@@ -26,11 +26,12 @@
             android:text="@string/reserved_at"
             android:textColor="@color/blue_50"
             android:textSize="@dimen/text_14_16_16_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fra_reserved_date"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/fra_main_page_next_name_family"
+            android:id="@+id/fra_reserved_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/blue_50"
@@ -46,6 +47,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fra_reserved_recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
