@@ -90,6 +90,9 @@
     <string name="reserved_at">رزرو شده‌های</string>
     <string name="answers">پاسخ‌های</string>
     <string name="add_package">افزودن پکیج</string>
+    <string name="package_name">نام پکیج</string>
+    <string name="select_massage">انتخاب ماساژ</string>
+    <string name="description">توضیحات</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
