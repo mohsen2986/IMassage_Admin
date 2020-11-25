@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_configFragment"
+            app:destination="@id/configFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
@@ -39,7 +42,11 @@
         android:name="com.example.imassage_admin.ui.fragment.slider.SliderFragment"
         android:label="SliderFragment"
         tools:layout="@layout/fragment_slider"
-        />
+        >
+        <action
+            android:id="@+id/action_sliderFragment_to_addSliderFragment"
+            app:destination="@id/addSliderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/configFragment"
         android:name="com.example.imassage_admin.ui.fragment.config.ConfigFragment"
@@ -63,9 +70,21 @@
     <fragment
         android:id="@+id/packagesFragment"
         android:name="com.example.imassage_admin.ui.fragment.packages.PackagesFragment"
-        android:label="PackagesFragment" />
+        android:label="PackagesFragment" >
+        <action
+            android:id="@+id/action_packagesFragment_to_addPackageFragment"
+            app:destination="@id/addPackageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/massageFragment"
         android:name="com.example.imassage_admin.ui.fragment.massage.MassageFragment"
         android:label="MassageFragment" />
+    <fragment
+        android:id="@+id/addPackageFragment"
+        android:name="com.example.imassage_admin.ui.fragment.packages.addPakcage.AddPackageFragment"
+        android:label="AddPackageFragment" />
+    <fragment
+        android:id="@+id/addSliderFragment"
+        android:name="com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderFragment"
+        android:label="AddSliderFragment" />
 </navigation>
