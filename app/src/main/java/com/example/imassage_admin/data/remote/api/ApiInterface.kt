@@ -2,6 +2,7 @@ package com.example.imassage_admin.data.remote.api
 
 import com.example.imassage_admin.data.model.AboutUs
 import com.example.imassage_admin.data.model.Boarder
+import com.example.imassage_admin.data.model.Config
 import com.example.imassage_admin.data.model.Question
 import com.example.imassage_admin.data.remote.model.*
 import com.haroldadmin.cnradapter.NetworkResponse
@@ -120,5 +121,54 @@ interface ApiInterface{
     suspend fun users(
             @Query("page") page: Int?
     ): NetworkResponse< UserResponse , ErrorResponse>
+
+    // configs
+    @GET("configs")
+    suspend fun configs(
+    ): NetworkResponse<Config, ErrorResponse>
+
+    @POST("configs")
+    suspend fun updateConfigs(
+            @Query("h8") h8: String ,
+            @Query("h8_gender") h8_gender: String ,
+            @Query("h9") h9: String ,
+            @Query("h9_gender") h9_gender: String ,
+            @Query("h10") h10: String ,
+            @Query("h10_gender") h10_gender: String ,
+            @Query("h11") h11: String ,
+            @Query("h11_gender") h11_gender: String ,
+            @Query("h12") h12: String ,
+            @Query("h12_gender") h12_gender: String ,
+            @Query("h13") h13: String ,
+            @Query("h13_gender") h13_gender: String ,
+            @Query("h14") h14: String ,
+            @Query("h14_gender") h14_gender: String ,
+            @Query("h15") h15: String ,
+            @Query("h15_gender") h15_gender: String ,
+            @Query("h16") h16: String ,
+            @Query("h16_gender") h16_gender: String ,
+            @Query("h17") h17: String ,
+            @Query("h17_gender") h17_gender: String ,
+            @Query("h18") h18: String ,
+            @Query("h18_gender") h18_gender: String ,
+            @Query("h19") h19: String ,
+            @Query("h19_gender") h19_gender: String ,
+            @Query("h20") h20: String ,
+            @Query("h20_gender") h20_gender: String ,
+            @Query("h21") h21: String ,
+            @Query("h21_gender") h21_gender: String ,
+            @Query("h22") h22: String ,
+            @Query("h22_gender") h22_gender: String ,
+            @Query("d1") d1: String ,
+            @Query("d2") d2: String ,
+            @Query("d3") d3: String ,
+            @Query("d4") d4: String ,
+            @Query("d5") d5: String ,
+            @Query("d6") d6: String ,
+            @Query("d7") d7: String ,
+            @Query("closed_days") closed_days: String ,
+            @Query("open_days") open_days: String ,
+            @Query("_method") method: String = "PUT"
+            ): NetworkResponse<Config , ErrorResponse>
 
 }

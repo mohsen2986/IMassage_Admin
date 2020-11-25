@@ -1,30 +1,31 @@
-package com.example.imassage_admin.ui.fragment.packages
+package com.example.imassage_admin.ui.fragment.packages.addPakcage
 
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.setFragmentResultListener
+import androidx.activity.OnBackPressedCallback
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
-import com.example.imassage_admin.data.model.Package
-import com.example.imassage_admin.databinding.FragmentPackagesBinding
-import com.example.imassage_admin.ui.adapter.ryclerView.RecyclerAdapter
+import com.example.imassage_admin.data.model.Massage
+import com.example.imassage_admin.databinding.FragmentAddPackageBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.example.imassage_admin.ui.utils.StaticVariables
 import com.haroldadmin.cnradapter.NetworkResponse
-import kotlinx.android.synthetic.main.fragment_packages.*
+import kotlinx.android.synthetic.main.fragment_add_package.*
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -35,27 +36,29 @@ import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 import java.io.File
 
-class PackagesFragment : ScopedFragment() , KodeinAware {
+
+class AddPackageFragment : ScopedFragment() , KodeinAware{
     override val kodein: Kodein by closestKodein()
-    private val viewModelFactory: PackageViewModelFactory by instance()
+    private val viewModelFactory: AddPackageViewModelFactory by instance()
 
-    private lateinit var viewModel: PackagesViewModel
-    private lateinit var binding : FragmentPackagesBinding
+    private lateinit var viewModel: AddPackageViewModel
     private lateinit var navController: NavController
+    private lateinit var binding: FragmentAddPackageBinding
 
-    // -- FOR DATA
+    // --FROM DATA
     private var fileUri: Uri? = null
     private var mediaPath: String? = null
     private var postPath: String? = null
     private val REQUEST_PICK_PHOTO = 2
 
-    private lateinit var adapter: RecyclerAdapter<Package>
-
+    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var massages: List<Massage>
+    private lateinit var selectedMassage: String
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        binding = FragmentPackagesBinding.inflate(inflater ,container ,false)
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?): View? {
+        binding = FragmentAddPackageBinding.inflate(inflater , container ,false)
         return binding.root
     }
 
@@ -66,17 +69,37 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this , viewModelFactory).get(PackagesViewModel::class.java)
-        bindUI()
-        initAdapters()
+        viewModel = ViewModelProvider(this , viewModelFactory).get(AddPackageViewModel::class.java)
+        initAdapter()
         bindAdapter()
+        bindUI()
         uiActions()
+
+//        setFragmentResult("requestKey", bundleOf("bundleKey" to StaticVariables.REFRESH))
+//        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
+//            override fun handleOnBackPressed() {
+//                 Handle the back button event
+//            }
+//        }
+//        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+
     }
-    private fun bindUI() = launch {
-        when(val callback = viewModel.packages()){
-            is NetworkResponse.Success ->
-                adapter.datas = callback.body.datas
+    private fun bindUI() =launch {
+        when(val callback = viewModel.massages()){
+            is NetworkResponse.Success -> {
+                massages  = callback.body.datas
+                adapter.addAll(massages.map{it.name})
+            }
         }
+    }
+    private fun uploadData(){
+
+    }
+    private fun getImageFromGallery(){
+        val galleryIntent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
     }
     private fun upload() = launch {
         postPath?.let {
@@ -89,14 +112,13 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
-
-                viewModel.uploadPackages(body , "Package From Phone" , "this is a test" , "2000" , "1")
+                viewModel.uploadPackages(body , fra_add_package_packageName.text.toString() , fra_add_package_description.text.toString()
+                        , fra_add_package_cost.text.toString() , selectedMassage)
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
@@ -129,35 +151,34 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
         }
 
     }
-    private fun initAdapters(){
-        adapter = RecyclerAdapter()
+    private fun initAdapter(){
+        adapter = ArrayAdapter( requireContext() ,R.layout.dropdown_select_massage)
     }
     private fun bindAdapter(){
-        fra_package_recycler.adapter = adapter
+        fra_add_package_select_massage.setAdapter(adapter)
     }
+    private fun getMassageId(massageName: String) =
+        massages.find { it.name == massageName }!!.id
     private fun uiActions(){
         binding.onClick = object: OnCLickHandler<Nothing>{
             override fun onClickItem(element: Nothing) {}
             override fun onClickView(view: View, element: Nothing) {}
             override fun onClick(view: View) {
                 when(view){
-                    fra_package_back ->
-                        activity!!.onBackPressed()
-                    fra_package_add_package ->
-                        navController.navigate(R.id.action_packagesFragment_to_addPackageFragment)
+                    fra_add_package_insertImage ->
+                        getImageFromGallery()
+
+                    fra_add_package_submit ->
+                        upload()
                 }
             }
         }
-        setFragmentResultListener("requestKey") { requestKey, bundle ->
-            // We use a String here, but any type that can be put in a Bundle is supported
-            val result = bundle.getString("bundleKey")
-            // Do something with the result
-            if(result == StaticVariables.REFRESH){
-                bindUI()
-            }
+        fra_add_package_select_massage.onItemClickListener = AdapterView.OnItemClickListener { parent, p1, position, p3 ->
+            Toast.makeText(context ,"${parent?.getItemAtPosition(position)}" , Toast.LENGTH_LONG).show()
+            selectedMassage = getMassageId(parent?.getItemAtPosition(position).toString())
         }
-    }
 
+    }
 
 
 }

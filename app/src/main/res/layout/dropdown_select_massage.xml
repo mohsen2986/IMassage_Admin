@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<TextView android:id="@+id/row_days_day"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginTop="@dimen/margin_8_12_16_24"
+    android:layout_marginBottom="@dimen/margin_8_12_16_24"
+    android:fontFamily="@font/iran_sans_bold"
+    android:textColor="@color/black_low"
+    android:textSize="@dimen/text_14_16_18_24"
+    android:textStyle="bold"
+    android:ellipsize="end"
+    android:singleLine="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="25 فروردینبشسبسشبسمن بشسوسشیب بشسیشس یشسیلاب"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" />
 
-    <TextView
-        android:id="@+id/row_days_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8_12_16_24"
-        android:layout_marginBottom="@dimen/margin_8_12_16_24"
-        android:fontFamily="@font/iran_sans_bold"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        android:ellipsize="end"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="25 فروردینبشسبسشبسمن بشسوسشیب بشسیشس یشسیلاب" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>

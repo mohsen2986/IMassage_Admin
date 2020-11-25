@@ -58,7 +58,7 @@ class UsersFragment : ScopedFragment() , KodeinAware {
         configureObservables()
         initAdapter()
         bindUI()
-        user_recycler.adapter = adapter
+//        user_recycler.adapter = adapter
     }
     private fun bindUI() = launch {
         when(val callback = viewModel.users(3)){

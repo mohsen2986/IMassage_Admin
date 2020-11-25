@@ -46,9 +46,9 @@ class QuestionFragment : ScopedFragment() , KodeinAware {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(QuestionViewModel::class.java)
         bindUI()
-        quesiton_txt.setOnClickListener {
-            upload()
-        }
+//        quesiton_txt.setOnClickListener {
+//            upload()
+//        }
     }
     private fun bindUI() = launch {
         when(val callback = viewModel.questions()){

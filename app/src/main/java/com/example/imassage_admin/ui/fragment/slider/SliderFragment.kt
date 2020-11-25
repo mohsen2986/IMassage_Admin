@@ -86,7 +86,7 @@ class SliderFragment : ScopedFragment() , KodeinAware {
                 val imageFile = File(postPath!!)
 
                 val requestBody = RequestBody.create(
-                        activity!!.contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
+                        requireActivity().contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
                         imageFile
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
@@ -95,7 +95,7 @@ class SliderFragment : ScopedFragment() , KodeinAware {
 
                 viewModel.uploadSlider(body , "IMassage" , description)
             }else{
-                Toast.makeText(activity!!, "لطفان عکس را انتخاب کنید.", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireActivity(), "لطفان عکس را انتخاب کنید.", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -111,7 +111,7 @@ class SliderFragment : ScopedFragment() , KodeinAware {
 
                     val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
 
-                    val cursor = activity!!.contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
+                    val cursor = requireActivity().contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
 
                     if (BuildConfig.DEBUG && cursor == null) {
                         error("Assertion failed")
@@ -128,7 +128,7 @@ class SliderFragment : ScopedFragment() , KodeinAware {
             }
 
         } else if (resultCode != Activity.RESULT_CANCELED) {
-            Toast.makeText(context!!, "Sorry, there was an error!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Sorry, there was an error!", Toast.LENGTH_LONG).show()
         }
 
     }

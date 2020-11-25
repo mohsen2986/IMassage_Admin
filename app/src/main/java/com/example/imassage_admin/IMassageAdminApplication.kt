@@ -6,11 +6,15 @@ import com.example.imassage_admin.data.remote.Service
 import com.example.imassage_admin.data.remote.api.ApiInterface
 import com.example.imassage_admin.data.repository.DataRepository
 import com.example.imassage_admin.ui.fragment.aboutUs.AboutUsViewModelFactory
+import com.example.imassage_admin.ui.fragment.config.ConfigViewModelFactory
 import com.example.imassage_admin.ui.fragment.mainPage.MainPageViewModelFactory
 import com.example.imassage_admin.ui.fragment.massage.MassageViewModelFactory
 import com.example.imassage_admin.ui.fragment.packages.PackageViewModelFactory
+import com.example.imassage_admin.ui.fragment.packages.addPakcage.AddPackageViewModelFactory
 import com.example.imassage_admin.ui.fragment.question.QuestionViewModelFactory
 import com.example.imassage_admin.ui.fragment.slider.SliderViewModelFactory
+import com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderFragment
+import com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderViewModelFactory
 import com.example.imassage_admin.ui.fragment.users.UsersViewModelFactory
 import com.facebook.stetho.Stetho
 import org.kodein.di.Kodein
@@ -38,6 +42,9 @@ class IMassageAdminApplication(
         bind() from provider { PackageViewModelFactory(instance())}
         bind() from provider { QuestionViewModelFactory(instance()) }
         bind() from provider { UsersViewModelFactory(instance()) }
+        bind() from provider { AddSliderViewModelFactory(instance()) }
+        bind() from provider { AddPackageViewModelFactory(instance()) }
+        bind() from provider { ConfigViewModelFactory(instance()) }
     }
 
     override fun onCreate() {

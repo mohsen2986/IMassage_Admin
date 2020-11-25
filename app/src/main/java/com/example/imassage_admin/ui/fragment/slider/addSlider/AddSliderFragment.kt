@@ -77,7 +77,7 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
 
                     val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
 
-                    val cursor = activity!!.contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
+                    val cursor = requireActivity().contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
 
                     if (BuildConfig.DEBUG && cursor == null) {
                         error("Assertion failed")
@@ -94,7 +94,7 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
             }
 
         } else if (resultCode != Activity.RESULT_CANCELED) {
-            Toast.makeText(context!!, "Sorry, there was an error!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Sorry, there was an error!", Toast.LENGTH_LONG).show()
         }
 
     }
@@ -110,7 +110,7 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
                 val imageFile = File(postPath!!)
 
                 val requestBody = RequestBody.create(
-                    activity!!.contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
+                    requireActivity().contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
                     imageFile
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
@@ -121,7 +121,7 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
 
                 viewModel.uploadSlider(body , description_ , description)
             }else{
-                Toast.makeText(activity!!, "please select an image ", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
         }
     }

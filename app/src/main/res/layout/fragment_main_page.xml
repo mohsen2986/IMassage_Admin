@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -193,8 +201,8 @@
                         android:layout_marginStart="@dimen/margin_8_8_8_16"
                         android:layout_marginEnd="@dimen/margin_4_4_4_8"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
-
                         app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_aboutUs"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/fra_main_page_aboutUs"
@@ -230,6 +238,7 @@
                         android:layout_marginTop="@dimen/margin_12_16_16_32"
                         android:layout_marginEnd="@dimen/margin_8_8_8_16"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
                         app:layout_constraintDimensionRatio="w,1:2"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -263,6 +272,7 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
                         app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_massage"
                         app:layout_constraintEnd_toEndOf="@+id/fra_main_page_slider"
@@ -296,6 +306,7 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="@dimen/margin_8_8_8_16"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
                         app:layout_constraintDimensionRatio="w,1:2"
                         app:layout_constraintEnd_toEndOf="@+id/fra_main_page_aboutUs"
@@ -328,6 +339,7 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
                         app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_payments"
                         app:layout_constraintEnd_toEndOf="@+id/fra_main_page_slider"
@@ -361,6 +373,7 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="@dimen/margin_8_8_8_16"
                         android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
                         app:layout_constraintDimensionRatio="w,1:2"
                         app:layout_constraintEnd_toEndOf="@+id/fra_main_page_aboutUs"
