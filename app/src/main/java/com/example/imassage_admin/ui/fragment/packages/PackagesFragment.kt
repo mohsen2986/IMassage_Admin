@@ -12,12 +12,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Package
 import com.example.imassage_admin.databinding.FragmentPackagesBinding
+import com.example.imassage_admin.ui.adapter.ryclerView.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.example.imassage_admin.ui.utils.StaticVariables
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.android.synthetic.main.fragment_packages.*
 import kotlinx.coroutines.launch
@@ -44,6 +49,8 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
     private var postPath: String? = null
     private val REQUEST_PICK_PHOTO = 2
 
+    private lateinit var adapter: RecyclerAdapter<Package>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -60,20 +67,15 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(PackagesViewModel::class.java)
-        val galleryIntent = Intent(
-            Intent.ACTION_PICK,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
         bindUI()
-        package_txt.setOnClickListener {
-            upload()
-        }
+        initAdapters()
+        bindAdapter()
+        uiActions()
     }
     private fun bindUI() = launch {
-        when(val callback = viewModel.deletePackage("6")){
+        when(val callback = viewModel.packages()){
             is NetworkResponse.Success ->
-                Log.e("Log__" , "${callback.body}")
-
+                adapter.datas = callback.body.datas
         }
     }
     private fun upload() = launch {
@@ -82,7 +84,7 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
                 val imageFile = File(postPath!!)
 
                 val requestBody = RequestBody.create(
-                    activity!!.contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
+                    requireActivity().contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
                     imageFile
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
@@ -90,7 +92,7 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
 
                 viewModel.uploadPackages(body , "Package From Phone" , "this is a test" , "2000" , "1")
             }else{
-                Toast.makeText(activity!!, "please select an image ", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -106,7 +108,7 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
 
                     val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
 
-                    val cursor = activity!!.contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
+                    val cursor = requireActivity().contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
 
                     if (BuildConfig.DEBUG && cursor == null) {
                         error("Assertion failed")
@@ -123,9 +125,37 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
             }
 
         } else if (resultCode != Activity.RESULT_CANCELED) {
-            Toast.makeText(context!!, "Sorry, there was an error!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Sorry, there was an error!", Toast.LENGTH_LONG).show()
         }
 
+    }
+    private fun initAdapters(){
+        adapter = RecyclerAdapter()
+    }
+    private fun bindAdapter(){
+        fra_package_recycler.adapter = adapter
+    }
+    private fun uiActions(){
+        binding.onClick = object: OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    fra_package_back ->
+                        activity!!.onBackPressed()
+                    fra_package_add_package ->
+                        navController.navigate(R.id.action_packagesFragment_to_addPackageFragment)
+                }
+            }
+        }
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            // We use a String here, but any type that can be put in a Bundle is supported
+            val result = bundle.getString("bundleKey")
+            // Do something with the result
+            if(result == StaticVariables.REFRESH){
+                bindUI()
+            }
+        }
     }
 
 
