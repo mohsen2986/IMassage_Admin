@@ -96,6 +96,33 @@
     <string name="add_massage">افزودن ماساژ</string>
     <string name="massage_name">نام ماساژ</string>
     <string name="price">قیمت</string>
+    <string name="config_time">پیکربندی زمان</string>
+    <string name="active">فعال</string>
+    <string name="_08">08:00</string>
+    <string name="_09">09:00</string>
+    <string name="_10">10:00</string>
+    <string name="_11">11:00</string>
+    <string name="_12">12:00</string>
+    <string name="_13">13:00</string>
+    <string name="_14">14:00</string>
+    <string name="_15">15:00</string>
+    <string name="_16">16:00</string>
+    <string name="_17">17:00</string>
+    <string name="_18">18:00</string>
+    <string name="_19">19:00</string>
+    <string name="_20">20:00</string>
+    <string name="_21">21:00</string>
+    <string name="_22">22:00</string>
+    <string name="config_date">پیکربندی روزها</string>
+    <string name="_sat">شنبه</string>
+    <string name="_sun">یکشنبه</string>
+    <string name="_mon">دوشنبه</string>
+    <string name="_three">سه‌شنبه</string>
+    <string name="_four">چهارشنبه</string>
+    <string name="_five">پنج‌شنبه</string>
+    <string name="_fri">جمعه</string>
+    <string name="days_to_reserve">تعداد روزهای قابل رزرو</string>
+    <string name="disable_days">تعداد روزهای غیرقابل قابل رزرو</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>

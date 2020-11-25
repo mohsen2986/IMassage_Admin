@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height_64_68_72_96"
+        android:background="@drawable/fra_reserved_curve_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_date"
+            android:textColor="@color/blue_50"
+            android:textSize="@dimen/text_16_18_18_28"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fra_config_date_back"
+            android:layout_width="@dimen/width_48_48_48_64"
+            android:layout_height="@dimen/width_48_48_48_64"
+            android:layout_marginStart="16dp"
+            android:padding="@dimen/padding_8_4_0"
+            android:tint="@color/blue_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <ImageView
+            android:id="@+id/fra_config_date_submit"
+            android:layout_width="@dimen/width_48_48_48_64"
+            android:layout_height="@dimen/width_48_48_48_64"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/padding_8_4_0"
+            android:tint="@color/blue_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_done" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_sat"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_sun"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_mon"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_three"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_four"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_five"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fra_config_date_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                        android:drawableEnd="@drawable/ic_date"
+                        android:drawablePadding="@dimen/margin_4_4_4_8"
+                        android:text="@string/_fri"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/fra_config_date_active_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:checked="false"
+                        android:enabled="true"
+                        android:text="@string/active"
+                        android:textColor="@color/black_low"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_config_date_6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:switchPadding="@dimen/margin_4_4_4_8" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8_12_16_20"
+                android:layout_marginStart="@dimen/margin_12_16_16_32"
+                android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                android:hint="@string/days_to_reserve"
+                android:layoutDirection="rtl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fra_config_date_enable_days"
+                    style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:inputType="numberDecimal"
+                    android:digits="1234567890"
+                    android:textSize="@dimen/text_14_16_16_20" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12_16_16_32"
+                android:layout_marginTop="@dimen/margin_8_12_16_20"
+                android:layout_marginBottom="@dimen/margin_12_16_16_32"
+                android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                android:hint="@string/disable_days"
+                android:layoutDirection="rtl"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fra_config_date_disable_days"
+                    style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    tools:text="4" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
