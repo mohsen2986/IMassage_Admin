@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.R
 import com.example.imassage_admin.databinding.FragmentMainPageBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
 import kotlinx.android.synthetic.main.fragment_main_page.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -35,7 +36,7 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMainPageBinding.inflate(layoutInflater , container , false)
-        return inflater.inflate(R.layout.fragment_main_page, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,7 +48,8 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(MainPageViewModel::class.java)
         bindUI()
-        ActivityCompat.requestPermissions(activity!!, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE) ,1)
+        UIActions()
+        ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE) ,1)
     }
     private fun bindUI() = launch{
         /*main_txt.setOnClickListener {
@@ -55,7 +57,24 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
         }*/
     }
     private fun UIActions(){
-        val onClick = View.OnClickListener { view: View? ->
+        binding.onClick = object: OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    fra_main_page_aboutUs ->
+                        navController.navigate(R.id.action_mainPageFragment_to_aboutUsFragment)
+                    fra_main_page_slider ->
+                        navController.navigate(R.id.action_mainPageFragment_to_sliderFragment)
+                    fra_main_page_package ->
+                        navController.navigate(R.id.action_mainPageFragment_to_packagesFragment)
+                    fra_main_page_massage ->
+                        navController.navigate(R.id.action_mainPageFragment_to_massageFragment)
+                    fra_main_page_payments -> 
+                        navController.navigate(R.id.action_mainPageFragment_to_configFragment)
+                }
+            }
+
 
         }
     }
