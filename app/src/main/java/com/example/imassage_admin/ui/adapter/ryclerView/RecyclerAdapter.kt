@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imassage_admin.R
 import com.example.imassage_admin.data.model.Boarder
+import com.example.imassage_admin.data.model.Package
+import com.example.imassage_admin.databinding.RowPackagesBinding
 import com.example.imassage_admin.databinding.RowSlidesBinding
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 
@@ -27,7 +29,9 @@ class RecyclerAdapter<T>(
             R.layout.row_slides -> SliderViewHolder(
                     RowSlidesBinding.inflate(layoutInflater , parent , false)
             )
-
+            R.layout.row_packages -> PackageViewHolder(
+                RowPackagesBinding.inflate(layoutInflater , parent , false)
+            )
             else -> throw IllegalStateException("the type is invalid!!")
         }
     }
@@ -37,13 +41,14 @@ class RecyclerAdapter<T>(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
             is SliderViewHolder -> holder.bind(datas[position] as Boarder, onClickHandler = onClickHandler)
+            is PackageViewHolder -> holder.bind(datas[position]  as Package , onClickHandler = onClickHandler)
         }
     }
 
     override fun getItemViewType(position: Int): Int =
             when(datas[0]){
                 is Boarder -> R.layout.row_slides
-
+                is Package -> R.layout.row_packages
                 else -> throw IllegalStateException("the type is invalid!")
             }
 }
