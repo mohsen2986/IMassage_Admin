@@ -167,8 +167,13 @@ interface ApiInterface{
             @Query("d6") d6: String ,
             @Query("d7") d7: String ,
             @Query("closed_days") closed_days: String ,
-            @Query("open_days") open_days: String ,
-            @Query("_method") method: String = "PUT"
+            @Query("open_days") open_days: String
             ): NetworkResponse<Config , ErrorResponse>
+
+    // order
+    @GET("order")
+    suspend fun order(
+            @Query("page") page: Int?
+    ): NetworkResponse< OrderResponse , ErrorResponse>
 
 }
