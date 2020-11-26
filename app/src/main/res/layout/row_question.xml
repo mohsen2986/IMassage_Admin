@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_answer_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_4_4_4_8"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="@dimen/margin_4_4_4_8"
+    app:cardCornerRadius="16dp"
+    app:strokeColor="@color/overlay_dark_60"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:text="@string/question"
+            android:textAppearance="@style/TextAppearance.AppCompat.TextView.bold_16"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_16_24"
+            app:layout_constraintBottom_toBottomOf="@+id/row_question_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/row_question_delete" />
+
+        <TextView
+            android:id="@+id/row_question_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8_12_16_20"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_4_4_4_8"
+            android:layout_marginBottom="@dimen/margin_8_12_16_20"
+            android:text="@string/lorem_20"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_question_delete" />
+
+        <ImageView
+            android:id="@+id/row_question_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginStart="@dimen/margin_8_12_16_20"
+            android:background="@drawable/back_circle_white"
+            android:padding="@dimen/margin_8_8_8_16"
+            android:tint="@color/black_low"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

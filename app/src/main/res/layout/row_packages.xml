@@ -102,6 +102,19 @@
         app:layout_constraintTop_toBottomOf="@+id/row_packages_cardView"
         tools:text="@string/lorem_20" />
 
+    <ImageView
+        android:id="@+id/row_packages_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8_12_16_20"
+        android:layout_marginStart="@dimen/margin_8_12_16_20"
+        android:background="@drawable/back_circle_white"
+        android:padding="@dimen/margin_8_8_8_16"
+        android:tint="@color/black_low"
+        android:elevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

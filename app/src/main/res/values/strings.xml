@@ -123,6 +123,9 @@
     <string name="_fri">جمعه</string>
     <string name="days_to_reserve">تعداد روزهای قابل رزرو</string>
     <string name="disable_days">تعداد روزهای غیرقابل قابل رزرو</string>
+    <string name="questions">سوالات</string>
+    <string name="add_question">افزودن سوال</string>
+    <string name="offer_token">کدتخقیف</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
