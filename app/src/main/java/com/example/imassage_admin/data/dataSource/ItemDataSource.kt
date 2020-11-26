@@ -27,7 +27,7 @@ class ItemDataSource<T>(
     ) {
         retryQuery = { loadInitial(params, callback) }
         loadInitial {
-            callback.onResult(it , null , 2)
+            callback.onResult(it , null , if(pages == 1) null else 2)
         }
     }
 
@@ -58,11 +58,11 @@ class ItemDataSource<T>(
 
     private fun loadInitial(callBack:(List<T>) -> Unit ){
         scope.launch (getJobErrorHandler() + supervisorJob){
-            when(val callback_ = repository.users(0)){
+            when(val callback_ = repository.users(1)){
                 is NetworkResponse.Success -> pages = callback_.body.metadata.pagination.totalPages
             }
 //            pages = repository.users(query).
-            executeQuery(0) {
+            executeQuery(1) {
                 callBack(it)
             }
         }
