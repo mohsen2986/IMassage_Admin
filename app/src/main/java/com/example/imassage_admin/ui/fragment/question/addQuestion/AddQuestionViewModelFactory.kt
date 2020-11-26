@@ -10,6 +10,6 @@ data class AddQuestionViewModelFactory(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return AddQuestionViewModel(dataRepository)
+        return AddQuestionViewModel(dataRepository) as T
     }
 }
