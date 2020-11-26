@@ -151,4 +151,8 @@ class DataRepository(
                     closed_days,
                     open_days
     )
+
+    // order
+    suspend fun orders(page: Int?) =
+            apiInterface.order(page)
 }
