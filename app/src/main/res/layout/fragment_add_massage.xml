@@ -1,15 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.massage.addMassage.AddMassageFragment">
-
-    <TextView
+    <data>
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appbar_height_64_68_72_96"
+            android:background="@drawable/fra_reserved_curve_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_massage"
+                android:textColor="@color/blue_50"
+                android:textSize="@dimen/text_16_18_18_28"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fra_add_massage_back"
+                android:layout_width="@dimen/width_48_48_48_64"
+                android:layout_height="@dimen/width_48_48_48_64"
+                android:layout_marginStart="16dp"
+                android:padding="@dimen/padding_8_4_0"
+                android:tint="@color/blue_50"
+                android:onClick="@{onClick::onClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/row_packages_cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            app:cardCornerRadius="@dimen/margin_12_16_16_32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+            app:strokeColor="@color/overlay_dark_40"
+            app:strokeWidth="@dimen/margin_1_1_2_3">
+
+            <ImageView
+                android:id="@+id/fra_add_massage_image"
+                android:layout_width="@dimen/road_72_80_96_120"
+                android:layout_height="@dimen/road_72_80_96_120"
+                android:layout_margin="@dimen/margin_1_1_2_3"
+                tools:srcCompat="@drawable/ic_image" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fra_add_massage_insertImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/blue_800"
+            android:paddingVertical="@dimen/margin_8_12_16_20"
+            android:text="@string/insert_image"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            android:onClick="@{onClick::onClick}"
+            app:icon="@drawable/ic_image"
+            app:iconSize="@dimen/width_24_24_28_40"
+            app:layout_constraintBottom_toBottomOf="@+id/row_packages_cardView"
+            app:layout_constraintEnd_toStartOf="@id/row_packages_cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/row_packages_cardView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/massage_name"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_packages_cardView"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_massage_massageName"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_16_20"
+                tools:text="پکیج رونق اقتصادی" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/price"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_massage_cost"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:inputType="numberDecimal"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_16_20"
+                tools:text="90,000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/description"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_massage_description"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_16_20"
+                tools:text="پکیج رونق اقتصادی" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fra_add_massage_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingVertical="@dimen/margin_8_12_16_20"
+            android:text="@string/save"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            android:onClick="@{onClick::onClick}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

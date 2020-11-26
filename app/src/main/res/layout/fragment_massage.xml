@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,12 +46,15 @@
                 android:layout_height="@dimen/width_48_48_48_64"
                 android:layout_marginStart="16dp"
                 android:padding="@dimen/padding_8_4_0"
-                android:tint="@color/blue_50" />
+                android:tint="@color/blue_50"
+                android:onClick="@{onClick::onClick}"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fra_massage_recycler"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +71,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/overlay_dark_40"
             app:strokeWidth="@dimen/margin_1_1_2_3"
+            android:onClick="@{onClick::onClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_12_16_16_32"

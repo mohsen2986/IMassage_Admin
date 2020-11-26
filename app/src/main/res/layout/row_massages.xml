@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="massage"
+            type="com.example.imassage_admin.data.model.Massage"
+            />
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/row_massage_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="2dp"
+    android:onClick="@{(v) -> onClick.onClickItem(massage)}"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -43,6 +55,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{massage.name}"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="پکیج ویژه" />
@@ -83,3 +96,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
