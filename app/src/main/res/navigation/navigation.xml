@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_mainPageFragment_to_configFragment"
             app:destination="@id/configFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_configTimesFragment"
+            app:destination="@id/configTimesFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
@@ -78,7 +84,11 @@
     <fragment
         android:id="@+id/massageFragment"
         android:name="com.example.imassage_admin.ui.fragment.massage.MassageFragment"
-        android:label="MassageFragment" />
+        android:label="MassageFragment" >
+        <action
+            android:id="@+id/action_massageFragment_to_addMassageFragment"
+            app:destination="@id/addMassageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addPackageFragment"
         android:name="com.example.imassage_admin.ui.fragment.packages.addPakcage.AddPackageFragment"
@@ -87,4 +97,16 @@
         android:id="@+id/addSliderFragment"
         android:name="com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderFragment"
         android:label="AddSliderFragment" />
+    <fragment
+        android:id="@+id/addMassageFragment"
+        android:name="com.example.imassage_admin.ui.fragment.massage.addMassage.AddMassageFragment"
+        android:label="AddMassageFragment" />
+    <fragment
+        android:id="@+id/configTimesFragment"
+        android:name="com.example.imassage_admin.ui.fragment.config.ConfigTimes.ConfigTimesFragment"
+        android:label="ConfigTimesFragment" />
+    <dialog
+        android:id="@+id/scopedDialogFragment"
+        android:name="com.example.imassage_admin.ui.base.ScopedDialogFragment"
+        android:label="ScopedDialogFragment" />
 </navigation>
