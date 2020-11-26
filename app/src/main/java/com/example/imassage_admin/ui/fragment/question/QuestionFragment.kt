@@ -59,5 +59,7 @@ class QuestionFragment : ScopedFragment() , KodeinAware {
     private fun upload() =launch {
         viewModel.deleteQuestion("3")
     }
+    private fun uiActions(){
+    }
 
 }

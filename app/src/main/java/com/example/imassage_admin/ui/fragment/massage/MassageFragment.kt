@@ -16,8 +16,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Massage
 import com.example.imassage_admin.databinding.FragmentMassageBinding
+import com.example.imassage_admin.ui.adapter.ryclerView.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.android.synthetic.main.fragment_massage.*
 import kotlinx.coroutines.launch
@@ -44,6 +47,8 @@ class MassageFragment : ScopedFragment() , KodeinAware {
     private var postPath: String? = null
     private val REQUEST_PICK_PHOTO = 2
 
+    private lateinit var adapter: RecyclerAdapter<Massage>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -60,20 +65,16 @@ class MassageFragment : ScopedFragment() , KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(MassageViewModel::class.java)
+        initAdapter()
+        bindAdapter()
+        uiActions()
         bindUI()
-        val galleryIntent = Intent(
-            Intent.ACTION_PICK,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
-
-        massage_txt.setOnClickListener{
-            upload()
-        }
     }
+
     private fun bindUI() = launch {
-        when(val callback = viewModel.deleteMassage("5")){
+        when(val callback = viewModel.massages()){
             is NetworkResponse.Success ->
-                Log.e("Log__", "${callback.body}")
+                adapter.datas = callback.body.datas
         }
     }
     private fun upload() = launch {
@@ -127,5 +128,39 @@ class MassageFragment : ScopedFragment() , KodeinAware {
         }
 
     }
+    private fun uiActions(){
+        binding.onClick = object: OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    fra_massage_back ->
+                        requireActivity().onBackPressed()
+                    fra_massage_add_massage ->
+                        navController.navigate(R.id.action_massageFragment_to_addMassageFragment)
+                }
+            }
 
+        }
+    }
+    private fun initAdapter(){
+        adapter = RecyclerAdapter()
+        adapter.onClickHandler = object: OnCLickHandler<Massage>{
+            override fun onClickItem(element: Massage) {
+                deleteMassage(element.id)
+            }
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Massage) {}
+
+        }
+    }
+    private fun bindAdapter(){
+        fra_massage_recycler.adapter = adapter
+    }
+    private fun deleteMassage(id: String) = launch{
+        when(val callback = viewModel.deleteMassage(id)){
+            is NetworkResponse.Success ->
+                Toast.makeText(context , "ماساژ حدف شد." , Toast.LENGTH_LONG).show()
+        }
+    }
 }
