@@ -70,8 +70,14 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                         navController.navigate(R.id.action_mainPageFragment_to_packagesFragment)
                     fra_main_page_massage ->
                         navController.navigate(R.id.action_mainPageFragment_to_massageFragment)
-                    fra_main_page_payments -> 
+                    fra_main_page_payments ->
+                        navController.navigate(R.id.action_mainPageFragment_to_historyFragment)
+                    fra_main_page_config_time ->
                         navController.navigate(R.id.action_mainPageFragment_to_configFragment)
+                    fra_main_page_config_date ->
+                        navController.navigate(R.id.action_mainPageFragment_to_configTimesFragment)
+                    fra_main_page_users ->
+                        navController.navigate(R.id.action_mainPageFragment_to_usersFragment)
                 }
             }
 
