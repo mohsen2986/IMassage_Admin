@@ -6,9 +6,12 @@ import com.example.imassage_admin.data.remote.Service
 import com.example.imassage_admin.data.remote.api.ApiInterface
 import com.example.imassage_admin.data.repository.DataRepository
 import com.example.imassage_admin.ui.fragment.aboutUs.AboutUsViewModelFactory
+import com.example.imassage_admin.ui.fragment.config.ConfigTimes.ConfigTimesViewModelFactory
 import com.example.imassage_admin.ui.fragment.config.ConfigViewModelFactory
+import com.example.imassage_admin.ui.fragment.history.HistoryViewModelFactory
 import com.example.imassage_admin.ui.fragment.mainPage.MainPageViewModelFactory
 import com.example.imassage_admin.ui.fragment.massage.MassageViewModelFactory
+import com.example.imassage_admin.ui.fragment.massage.addMassage.AddMassageViewModelFactory
 import com.example.imassage_admin.ui.fragment.packages.PackageViewModelFactory
 import com.example.imassage_admin.ui.fragment.packages.addPakcage.AddPackageViewModelFactory
 import com.example.imassage_admin.ui.fragment.question.QuestionViewModelFactory
@@ -44,7 +47,10 @@ class IMassageAdminApplication(
         bind() from provider { UsersViewModelFactory(instance()) }
         bind() from provider { AddSliderViewModelFactory(instance()) }
         bind() from provider { AddPackageViewModelFactory(instance()) }
+        bind() from provider { AddMassageViewModelFactory(instance()) }
         bind() from provider { ConfigViewModelFactory(instance()) }
+        bind() from provider { ConfigTimesViewModelFactory(instance()) }
+        bind() from provider { HistoryViewModelFactory(instance()) }
     }
 
     override fun onCreate() {
