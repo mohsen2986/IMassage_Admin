@@ -57,7 +57,6 @@ class RecyclerAdapter<T> (
     private lateinit var layoutInflater:LayoutInflater
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         layoutInflater = LayoutInflater.from(parent.context)
-        println("debug: $viewType")
         return when(viewType){
             R.layout.row_item -> ItemViewHolder(
                 RowItemBinding.inflate(layoutInflater, parent, false)
@@ -77,7 +76,7 @@ class RecyclerAdapter<T> (
         when(getItemViewType(position)){
             R.layout.row_loading -> (holder as LoadingViewHolder).bind()
             R.layout.row_item -> (holder as ItemViewHolder).bind(getItem(position) as User, null)
-            R.layout.row_order -> (holder as OrderViewHolder).bind(getItem(position) as Order , null)
+            R.layout.row_order -> (holder as OrderViewHolder).bind(getItem(position) as Order , onClick =  onClickHandler)
         }
     }
 
