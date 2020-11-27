@@ -14,5 +14,7 @@ data class Order(
         @SerializedName("transaction")
         val transactions: Transactions,
         @SerializedName("user")
-        val user: User
+        val user: User ,
+        @SerializedName("times")
+        val times: List<Times>
 )
