@@ -7,4 +7,7 @@ class AddQuestionViewModel(
     private val dataRepository: DataRepository
 ) : ViewModel() {
 
+    suspend fun addQuestion(question: String) =
+            dataRepository.addQuestion(question)
+
 }

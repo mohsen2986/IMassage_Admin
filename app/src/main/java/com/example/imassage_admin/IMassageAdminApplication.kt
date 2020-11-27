@@ -15,6 +15,8 @@ import com.example.imassage_admin.ui.fragment.massage.addMassage.AddMassageViewM
 import com.example.imassage_admin.ui.fragment.packages.PackageViewModelFactory
 import com.example.imassage_admin.ui.fragment.packages.addPakcage.AddPackageViewModelFactory
 import com.example.imassage_admin.ui.fragment.question.QuestionViewModelFactory
+import com.example.imassage_admin.ui.fragment.question.addQuestion.AddQuestionViewModelFactory
+import com.example.imassage_admin.ui.fragment.showAnswers.ShowAnswersViewModelFactory
 import com.example.imassage_admin.ui.fragment.slider.SliderViewModelFactory
 import com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderFragment
 import com.example.imassage_admin.ui.fragment.slider.addSlider.AddSliderViewModelFactory
@@ -51,6 +53,8 @@ class IMassageAdminApplication(
         bind() from provider { ConfigViewModelFactory(instance()) }
         bind() from provider { ConfigTimesViewModelFactory(instance()) }
         bind() from provider { HistoryViewModelFactory(instance()) }
+        bind() from provider { AddQuestionViewModelFactory(instance())}
+        bind() from provider { ShowAnswersViewModelFactory(instance())}
     }
 
     override fun onCreate() {

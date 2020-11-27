@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView android:id="@+id/row_answer_container"
+<layout>
+    <data>
+        <variable
+            name="answer"
+            type="com.example.imassage_admin.data.model.Answer"
+            />
+    </data>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/row_answer_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="16dp"
@@ -38,7 +46,7 @@
             android:layout_marginStart="@dimen/margin_8_12_16_20"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/margin_4_4_4_8"
-            android:text="@string/lorem_20"
+            android:text="@{answer.question.question}"
             android:textColor="@color/black_low"
             android:textStyle="bold"
             android:textSize="@dimen/text_14_16_18_24"
@@ -79,6 +87,7 @@
                 android:textColor="@color/black_high"
                 android:textSize="@dimen/text_14_16_18_24"
                 android:textStyle="bold"
+                android:text="@{answer.answer}"
                 tools:text="@string/lorem_50" />
 
         </LinearLayout>
@@ -88,3 +97,4 @@
 
 
 </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -10,6 +10,6 @@ class ItemViewHolder(
     private val itemViewBinding: RowItemBinding
 ):RecyclerView.ViewHolder(itemViewBinding.root){
     fun bind(item: User, onClick: OnCLickHandler<User>?){
-        itemViewBinding.text = item.name
+        itemViewBinding.user = item
     }
 }

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+    <data>
+        <variable
+            name="question"
+            type="com.example.imassage_admin.data.model.Question"
+            />
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/row_answer_container"
@@ -38,7 +50,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/margin_4_4_4_8"
             android:layout_marginBottom="@dimen/margin_8_12_16_20"
-            android:text="@string/lorem_20"
+            android:text="@{question.question}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
@@ -57,9 +69,11 @@
             android:padding="@dimen/margin_8_8_8_16"
             android:tint="@color/black_low"
             android:elevation="4dp"
+            android:onClick="@{(v) -> onClick.onClickItem(question)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_delete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
+</layout>

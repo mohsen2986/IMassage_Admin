@@ -10,7 +10,8 @@ class OrderViewHolder(
         private val itemBinding: RowOrderBinding
 ): RecyclerView.ViewHolder(itemBinding.root){
 
-    fun bind(item: Order, onClick: OnCLickHandler<User>?){
-        itemBinding.text = item.massage.name
+    fun bind(item: Order, onClick: OnCLickHandler<Any>?){
+        itemBinding.order = item
+        itemBinding.onClick = onClick
     }
 }

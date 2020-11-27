@@ -2,20 +2,80 @@
 <layout>
     <data>
         <variable
-            name="text"
-            type="java.lang.String"
+            name="user"
+            type="com.example.imassage_admin.data.model.User"
             />
     </data>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-    <TextView
-        android:text="@{text}"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_massage_container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-</FrameLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/row_packages_cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            android:layout_marginBottom="@dimen/margin_12_16_16_32"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            app:cardCornerRadius="@dimen/margin_12_16_16_32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:strokeColor="@color/overlay_dark_40"
+            app:strokeWidth="@dimen/margin_1_1_2_3">
+
+            <ImageView
+                android:id="@+id/row_users_image"
+                android:layout_width="75dp"
+                android:layout_height="@dimen/road_72_80_96_120"
+                android:layout_margin="@dimen/margin_1_1_2_3"
+                android:scaleType="centerCrop"
+                android:loadImage="@{user.photo}"
+                tools:srcCompat="@tools:sample/avatars" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--android:layout_marginTop="@dimen/margin_8_8_8_16"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"-->
+
+
+        <TextView
+            android:id="@+id/row_users_name_family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@{user.gender.equals(`true`) ? @drawable/ic_man_users : @drawable/ic_woman_users}"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            android:text="@{user.name.concat(user.family)}"
+            app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="فااا يزه" />
+
+
+        <TextView
+            android:id="@+id/row_users_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@drawable/ic_phone"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            android:text="@{user.phone}"
+            app:layout_constraintBottom_toBottomOf="@+id/row_packages_cardView"
+            app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
+            app:layout_constraintTop_toBottomOf="@+id/row_users_name_family"
+            tools:text="09392624214" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

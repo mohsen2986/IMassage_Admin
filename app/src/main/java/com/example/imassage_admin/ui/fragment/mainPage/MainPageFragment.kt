@@ -78,6 +78,8 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                         navController.navigate(R.id.action_mainPageFragment_to_configTimesFragment)
                     fra_main_page_users ->
                         navController.navigate(R.id.action_mainPageFragment_to_usersFragment)
+                    fra_main_page_question ->
+                        navController.navigate(R.id.action_mainPageFragment_to_questionFragment)
                 }
             }
 

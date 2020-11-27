@@ -5,12 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imassage_admin.R
-import com.example.imassage_admin.data.model.Boarder
-import com.example.imassage_admin.data.model.Massage
-import com.example.imassage_admin.data.model.Package
-import com.example.imassage_admin.databinding.RowMassagesBinding
-import com.example.imassage_admin.databinding.RowPackagesBinding
-import com.example.imassage_admin.databinding.RowSlidesBinding
+import com.example.imassage_admin.data.model.*
+import com.example.imassage_admin.databinding.*
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 
 class RecyclerAdapter<T>(
@@ -37,6 +33,12 @@ class RecyclerAdapter<T>(
             R.layout.row_massages -> MassageViewHolder(
                     RowMassagesBinding.inflate(layoutInflater , parent , false)
             )
+            R.layout.row_question -> QuestionViewHolder(
+                    RowQuestionBinding.inflate(layoutInflater , parent , false)
+            )
+            R.layout.row_answer -> AnswerViewHolder(
+                    RowAnswerBinding.inflate(layoutInflater , parent , false)
+            )
             else -> throw IllegalStateException("the type is invalid!!")
         }
     }
@@ -48,6 +50,8 @@ class RecyclerAdapter<T>(
             is SliderViewHolder -> holder.bind(datas[position] as Boarder, onClickHandler = onClickHandler)
             is PackageViewHolder -> holder.bind(datas[position]  as Package , onClickHandler = onClickHandler)
             is MassageViewHolder -> holder.bind(datas[position] as Massage , onClickHandler = onClickHandler)
+            is QuestionViewHolder -> holder.bind(datas[position] as Question , onClickHandler = onClickHandler)
+            is AnswerViewHolder -> holder.bind(datas[position] as Answer , onClickHandler = onClickHandler)
         }
     }
 
@@ -56,6 +60,8 @@ class RecyclerAdapter<T>(
                 is Boarder -> R.layout.row_slides
                 is Package -> R.layout.row_packages
                 is Massage -> R.layout.row_massages
+                is Question -> R.layout.row_question
+                is Answer -> R.layout.row_answer
 
                 else -> throw IllegalStateException("the type is invalid!")
             }

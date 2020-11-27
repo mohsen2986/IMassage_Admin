@@ -176,4 +176,11 @@ interface ApiInterface{
             @Query("page") page: Int?
     ): NetworkResponse< OrderResponse , ErrorResponse>
 
+    // answers
+    @POST("answers")
+    suspend fun answers(
+            @Query("filled_form")
+            filledForm: String
+    ): NetworkResponse< AnswerResponse , ErrorResponse>
+
 }
