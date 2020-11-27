@@ -126,6 +126,9 @@
     <string name="questions">سوالات</string>
     <string name="add_question">افزودن سوال</string>
     <string name="offer_token">کدتخقیف</string>
+    <string name="add_offer">افزودن کدتخفیف</string>
+    <string name="number">تعداد</string>
+    <string name="offer_percent">درصد تخفیف</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
