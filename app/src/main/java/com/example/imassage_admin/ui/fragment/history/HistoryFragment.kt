@@ -6,16 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.paging.PagedList
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Order
 import com.example.imassage_admin.data.remote.model.NetworkState
 import com.example.imassage_admin.databinding.FragmentHistoryBinding
 import com.example.imassage_admin.ui.adapter.paging.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.example.imassage_admin.ui.utils.StaticVariables
 import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -56,7 +59,7 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
         configureObservables()
         initAdapter()
         bindUI()
-        history_.adapter = adapter
+        fra_history_recycler.adapter = adapter
     }
     private fun bindUI() = launch {
 
@@ -70,7 +73,6 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
         adapter = RecyclerAdapter(
                 object : RecyclerAdapter.OnClickListener{
                     override fun onRefresh() {
-
                     }
 
                     override fun whenListIsUpdated(size: Int, networkState: NetworkState?) {
@@ -80,14 +82,12 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
         )
         adapter.onClickHandler = object : OnCLickHandler<Any> {
             override fun onClickItem(element: Any) {
+                navController.navigate(R.id.action_historyFragment_to_showAnswersFragment ,
+                    bundleOf(StaticVariables.FORM_ID to (element as Order).filledForm.formId)
+                )
             }
-
-            override fun onClick(view: View) {
-            }
-
-            override fun onClickView(view: View, element: Any) {
-            }
-
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Any) {}
         }
     }
     private fun configureObservables() {

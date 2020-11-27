@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="onClick"
+            type="com.example.imassage_admin.ui.utils.OnCLickHandler"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,7 +47,9 @@
                 android:layout_height="@dimen/width_48_48_48_64"
                 android:layout_marginStart="16dp"
                 android:padding="@dimen/padding_8_4_0"
-                android:tint="@color/blue_50" />
+                android:tint="@color/blue_50"
+                android:onClick="@{onClick::onClick}"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -79,9 +89,11 @@
             android:text="@string/save"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:onClick="@{onClick::onClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

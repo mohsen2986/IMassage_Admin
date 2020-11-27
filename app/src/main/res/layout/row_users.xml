@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="user"
+            type="com.example.imassage_admin.data.model.User"
+            />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/row_massage_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -28,6 +35,7 @@
             android:layout_height="@dimen/road_72_80_96_120"
             android:layout_margin="@dimen/margin_1_1_2_3"
             android:scaleType="centerCrop"
+            android:loadImage="@{user.photo}"
             tools:srcCompat="@tools:sample/avatars" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -46,6 +54,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{user.name.concat(user.family)}"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="فااا يزه" />
@@ -61,6 +70,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{user.phone}"
         app:layout_constraintBottom_toBottomOf="@+id/row_packages_cardView"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toBottomOf="@+id/row_users_name_family"
@@ -68,3 +78,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

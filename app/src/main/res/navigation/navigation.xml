@@ -60,11 +60,19 @@
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.imassage_admin.ui.fragment.history.HistoryFragment"
-        android:label="HistoryFragment" />
+        android:label="HistoryFragment" >
+        <action
+            android:id="@+id/action_historyFragment_to_showAnswersFragment"
+            app:destination="@id/showAnswersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/questionFragment"
         android:name="com.example.imassage_admin.ui.fragment.question.QuestionFragment"
-        android:label="QuestionFragment" />
+        android:label="QuestionFragment" >
+        <action
+            android:id="@+id/action_questionFragment_to_addQuestionFragment"
+            app:destination="@id/addQuestionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.imassage_admin.ui.fragment.users.UsersFragment"
@@ -109,4 +117,17 @@
         android:id="@+id/scopedDialogFragment"
         android:name="com.example.imassage_admin.ui.base.ScopedDialogFragment"
         android:label="ScopedDialogFragment" />
+    <fragment
+        android:id="@+id/addQuestionFragment"
+        android:name="com.example.imassage_admin.ui.fragment.question.addQuestion.AddQuestionFragment"
+        android:label="AddQuestionFragment" />
+    <fragment
+        android:id="@+id/showAnswersFragment"
+        android:name="com.example.imassage_admin.ui.fragment.showAnswers.ShowAnswersFragment"
+        android:label="ShowAnswersFragment" >
+        <argument
+            android:name="form_id"
+            app:argType="string"
+            />
+    </fragment>
 </navigation>

@@ -10,9 +10,13 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.Question
 import com.example.imassage_admin.databinding.FragmentQuestionBinding
+import com.example.imassage_admin.ui.adapter.ryclerView.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.haroldadmin.cnradapter.NetworkResponse
+import kotlinx.android.synthetic.main.fragment_add_question.*
 import kotlinx.android.synthetic.main.fragment_question.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -27,6 +31,9 @@ class QuestionFragment : ScopedFragment() , KodeinAware {
     private lateinit var viewModel: QuestionViewModel
     private lateinit var navController: NavController
     private lateinit var binding: FragmentQuestionBinding
+
+    // -- FOR DATA
+    private lateinit var adapter: RecyclerAdapter<Question>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,21 +52,47 @@ class QuestionFragment : ScopedFragment() , KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(QuestionViewModel::class.java)
+        initAdapter()
+        bindAdapter()
         bindUI()
-//        quesiton_txt.setOnClickListener {
-//            upload()
-//        }
+        uiActions()
     }
     private fun bindUI() = launch {
         when(val callback = viewModel.questions()){
             is NetworkResponse.Success ->
-                Log.e("Log__" , "${callback.body}")
+                adapter.datas = callback.body.datas
         }
     }
-    private fun upload() =launch {
-        viewModel.deleteQuestion("3")
+    private fun deleteQuestion(id: String) =launch {
+        viewModel.deleteQuestion(id)
     }
     private fun uiActions(){
+        binding.onClick = object: OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    fra_question_back ->
+                        requireActivity().onBackPressed()
+                    fra_question_add_question ->
+                        navController.navigate(R.id.action_questionFragment_to_addQuestionFragment)
+                }
+            }
+        }
+    }
+    private fun initAdapter(){
+        adapter = RecyclerAdapter()
+        adapter.onClickHandler = object: OnCLickHandler<Question>{
+            override fun onClickItem(element: Question) {
+                deleteQuestion(element.questionId)
+            }
+
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Question) {}
+        }
+    }
+    private fun bindAdapter(){
+        fra_question_recycler.adapter = adapter
     }
 
 }

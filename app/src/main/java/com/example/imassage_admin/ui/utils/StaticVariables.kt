@@ -12,4 +12,5 @@ object StaticVariables{
     const val MASSAGE_ID = "MASSAGE_ID"
 
     const val REFRESH = "REFRESH"
+    const val FORM_ID ="FORM_ID"
 }

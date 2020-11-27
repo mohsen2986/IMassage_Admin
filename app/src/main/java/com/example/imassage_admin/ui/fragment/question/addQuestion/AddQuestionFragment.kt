@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.R
 import com.example.imassage_admin.databinding.FragmentAddQuestionBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
+import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.haroldadmin.cnradapter.NetworkResponse
+import kotlinx.android.synthetic.main.fragment_add_question.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -43,9 +47,38 @@ class AddQuestionFragment : ScopedFragment(), KodeinAware {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(AddQuestionViewModel::class.java)
         bindUI()
+        uiActions()
     }
     private fun bindUI() = launch {
 
+    }
+    private fun uiActions(){
+        binding.onClick = object:OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    fra_add_question_back ->
+                        requireActivity().onBackPressed()
+                    fra_add_question_submit -> {
+                        if (fra_add_question_question.text?.isNotEmpty()!!)
+                            sendQuestion()
+                        else
+                            Toast.makeText(context , "متن را وارد گنید" , Toast.LENGTH_SHORT).show()
+                    }
+
+
+                }
+            }
+
+
+        }
+    }
+    private fun sendQuestion() = launch {
+        when(val callback = viewModel.addQuestion(fra_add_question_question.text.toString())){
+            is NetworkResponse.Success ->
+                Toast.makeText(context , "سوال با موفقیت بار گذاری شد." , Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
