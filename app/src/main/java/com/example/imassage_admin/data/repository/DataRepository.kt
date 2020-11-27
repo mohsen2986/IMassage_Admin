@@ -155,4 +155,8 @@ class DataRepository(
     // order
     suspend fun orders(page: Int?) =
             apiInterface.order(page)
+
+    // answers
+    suspend fun answers(filledForm: String) =
+            apiInterface.answers(filledForm)
 }
