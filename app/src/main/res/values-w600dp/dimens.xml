@@ -46,7 +46,7 @@
     <dimen name="margin_12_16_16_32">32dp</dimen>
     <dimen name="margin_12_16_20_24">24dp</dimen>
     <dimen name="margin_8_12_16_20">20dp</dimen>
-    <dimen name="width_216">400dp</dimen>
+    <dimen name="width_dialog">400dp</dimen>
     <dimen name="width_120_152_176_304">304dp</dimen>
     <dimen name="text_14_16_18_28">28sp</dimen>
     <dimen name="width_30_30_35_50">50dp</dimen>

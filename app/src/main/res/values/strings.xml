@@ -14,7 +14,7 @@
     <string name="man">آقا</string>
     <string name="woman">خانم</string>
     <string name="next">بعدی</string>
-    <string name="configrm_password">تکرار رمز عبور</string>
+    <string name="confirm_password">تکرار رمز عبور</string>
     <string name="back">بازگشت</string>
     <string name="enter_verification_code">کد پیامکی به شماره‌ات ارسال شد.\n لطفا کد رو در زیر وارد کن.</string>
     <string name="verification_code">تایید کد پیامکی</string>
@@ -129,6 +129,10 @@
     <string name="add_offer">افزودن کدتخفیف</string>
     <string name="number">تعداد</string>
     <string name="offer_percent">درصد تخفیف</string>
+    <string name="password_reset">بازیابی رمزعبور</string>
+    <string name="enter_mobile_number">شماره موبایل خود را وارد نمایید</string>
+    <string name="reset">بازیابی</string>
+    <string name="new_password">رمزعبور جدید</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
