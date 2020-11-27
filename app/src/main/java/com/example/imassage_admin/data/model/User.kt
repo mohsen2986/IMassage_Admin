@@ -7,6 +7,8 @@ data class User(
         val id: String ,
         @SerializedName("name")
         val name: String ,
+        @SerializedName("family")
+        val family: String ,
         @SerializedName("phone")
         val phone: String ,
         @SerializedName("photo")
