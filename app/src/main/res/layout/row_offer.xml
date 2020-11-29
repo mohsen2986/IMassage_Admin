@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/row_offer_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="2dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
+        <variable
+            name="isUsed"
+            type="java.lang.Boolean" />
+    </data>
 
-    <TextView
-        android:id="@+id/row_offer_token"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_offer_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_12_16_16_32"
-        android:layout_marginEnd="@dimen/margin_12_16_16_32"
-        android:drawableEnd="@drawable/ic_woman_users"
-        android:drawablePadding="@dimen/margin_4_4_4_8"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="توکن تخفیف" />
+        android:elevation="2dp">
 
 
-    <TextView
-        android:id="@+id/row_offer_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8_8_8_16"
-        android:layout_marginEnd="@dimen/margin_12_16_16_32"
-        android:layout_marginBottom="@dimen/margin_8_12_16_20"
-        android:drawableEnd="@drawable/ic_date"
-        android:drawablePadding="@dimen/margin_4_4_4_8"
-        android:textColor="@color/black_low"
-        android:textSize="@dimen/text_14_16_18_24"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/row_offer_token"
-        tools:text="5 درصد" />
+        <TextView
+            android:id="@+id/row_offer_token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@drawable/ic_woman_users"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="توکن تخفیف" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/row_offer_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8_8_8_16"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:layout_marginBottom="@dimen/margin_8_12_16_20"
+            android:drawableEnd="@drawable/ic_date"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_offer_token"
+            tools:text="5 درصد" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/width_24_24_28_40"
+            android:layout_height="@dimen/width_24_24_28_40"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
