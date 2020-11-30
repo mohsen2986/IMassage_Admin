@@ -133,6 +133,7 @@
     <string name="enter_mobile_number">شماره موبایل خود را وارد نمایید</string>
     <string name="reset">بازیابی</string>
     <string name="new_password">رمزعبور جدید</string>
+    <string name="reservationn">رزروشده‌ها</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>

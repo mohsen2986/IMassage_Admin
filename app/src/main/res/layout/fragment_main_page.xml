@@ -170,30 +170,21 @@
                     android:layout_height="match_parent"
                     android:paddingBottom="@dimen/margin_8_8_8_16">
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_8_12_16_20"
-                        android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                        android:text="@string/reservation"
-                        android:textColor="@color/black_low"
-                        android:textSize="@dimen/text_14_16_16_24"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/fra_main_page_recycler"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_main_page_reserved"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_8_12_16_20"
-                        android:layoutDirection="rtl"
-                        android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="@dimen/margin_8_8_8_16"
+                        android:backgroundTint="@color/blue_800"
+                        android:paddingVertical="@dimen/margin_8_12_16_20"
+                        android:text="@string/reservationn"
+                        android:textSize="@dimen/text_14_16_18_24"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView4"
-                        tools:listitem="@layout/row_days" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/fra_main_page_slider"
@@ -236,7 +227,7 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="@dimen/margin_4_4_4_8"
-                        android:layout_marginTop="@dimen/margin_12_16_16_32"
+                        android:layout_marginTop="@dimen/margin_8_8_8_16"
                         android:layout_marginEnd="@dimen/margin_8_8_8_16"
                         android:backgroundTint="@color/blue_50"
                         android:onClick="@{onClick::onClick}"
@@ -245,7 +236,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/fra_main_page_slider"
-                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_recycler"
+                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_reserved"
                         app:strokeColor="@color/overlay_dark_40"
                         app:strokeWidth="@dimen/margin_1_1_2_3">
 

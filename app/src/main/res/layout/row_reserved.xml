@@ -31,19 +31,33 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
+        android:id="@+id/row_reserved_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_12_16_16_32"
+        android:drawableEnd="@drawable/ic_date"
+        android:drawablePadding="@dimen/margin_4_4_4_8"
+        android:textColor="@color/black_low"
+        android:textSize="@dimen/text_14_16_18_24"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/row_reserved_cardView"
+        app:layout_constraintTop_toTopOf="@+id/row_reserved_cardView"
+        tools:text="1399/05/03" />
+
+    <TextView
         android:id="@+id/row_reserved_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_12_16_16_32"
         android:layout_marginEnd="@dimen/margin_12_16_16_32"
         android:drawableEnd="@drawable/ic_clock_row_reserved"
         android:drawablePadding="@dimen/margin_4_4_4_8"
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/row_reserved_cardView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="16:00" />
+        app:layout_constraintBottom_toBottomOf="@+id/row_reserved_date"
+        app:layout_constraintEnd_toStartOf="@+id/row_reserved_date"
+        app:layout_constraintTop_toTopOf="@+id/row_reserved_date"
+        tools:text="22:00" />
 
     <TextView
         android:id="@+id/row_reserved_name_family"
