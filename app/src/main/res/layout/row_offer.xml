@@ -39,23 +39,76 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8_8_8_16"
             android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@drawable/ic_offer"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_offer_token"
+            tools:text="5 درصد" />
+
+        <TextView
+            android:id="@+id/row_offer_massage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:layout_marginTop="@dimen/margin_8_8_8_16"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@drawable/ic_massage"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row_offer_percent"
+            tools:text="ماساژ سوپر سامورایی لش اضافه" />
+
+        <TextView
+            android:id="@+id/row_offer_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8_8_8_16"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
             android:layout_marginBottom="@dimen/margin_8_12_16_20"
             android:drawableEnd="@drawable/ic_date"
             android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:text="@{order.reservedTimeDateId.date}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/row_offer_token"
-            tools:text="5 درصد" />
+            app:layout_constraintTop_toBottomOf="@+id/row_offer_massage"
+            tools:text="1399/05/03" />
+
+        <TextView
+            android:id="@+id/row_offer_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_date"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:text="@{order.reservedTimeDateId.date}"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/row_offer_start_date"
+            app:layout_constraintEnd_toStartOf="@+id/row_offer_start_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/row_offer_start_date"
+            tools:text="1399/05/03" />
+
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
             android:layout_width="@dimen/width_24_24_28_40"
             android:layout_height="@dimen/width_24_24_28_40"
             android:layout_marginStart="@dimen/margin_12_16_16_32"
             app:cardCornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/row_offer_massage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
