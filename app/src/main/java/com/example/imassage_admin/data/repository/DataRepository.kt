@@ -1,18 +1,10 @@
 package com.example.imassage_admin.data.repository
 
-import com.example.imassage_admin.data.model.AboutUs
-import com.example.imassage_admin.data.remote.api.ApiInterface
-import com.example.imassage_admin.data.remote.model.ErrorResponse
-import com.google.gson.JsonObject
-import com.haroldadmin.cnradapter.NetworkResponse
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import com.example.imassage_admin.data.remote.api.AuthApiInterface
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 
 class DataRepository(
-    private val apiInterface: ApiInterface
+    private val apiInterface: AuthApiInterface
 ){
     // ABOUT US
     suspend fun aboutUs() =
@@ -159,4 +151,14 @@ class DataRepository(
     // answers
     suspend fun answers(filledForm: String) =
             apiInterface.answers(filledForm)
+
+    // offers
+    suspend fun offers(page: Int) =
+            apiInterface.offers(page)
+
+    suspend fun createOffer(number: String , precent: String) =
+            apiInterface.createOffer(number , precent)
+
+    suspend fun deleteOffer(id: String) =
+            apiInterface.deleteOffer(id)
 }
