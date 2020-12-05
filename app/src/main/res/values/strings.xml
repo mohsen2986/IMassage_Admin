@@ -136,6 +136,7 @@
     <string name="reservationn">رزروشده‌ها</string>
     <string name="start_date">تاریخ شروع</string>
     <string name="end_date">تاریخ پایان</string>
+    <string name="help">مشاوره</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
