@@ -88,7 +88,7 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                         navController.navigate(R.id.action_mainPageFragment_to_questionFragment)
                     fra_main_page_offer_token ->
                         navController.navigate(R.id.action_mainPageFragment_to_offerFragment)
-                    fra_text ->
+                    fra_main_page_reserved ->
                         navController.navigate(R.id.action_mainPageFragment_to_historyFragment , bundleOf(StaticVariables.RESERVE_TYPE to StaticVariables.RESERVE_TIME))
                 }
             }

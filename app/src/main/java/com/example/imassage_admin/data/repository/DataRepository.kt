@@ -40,8 +40,8 @@ class DataRepository(
     suspend fun getPackages() =
         apiInterface.packages()
 
-    suspend fun uploadPackage(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String) =
-        apiInterface.uploadPackage(image , name , description , cost , massageId)
+    suspend fun uploadPackage(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String , length: String) =
+        apiInterface.uploadPackage(image , name , description , cost , massageId , length)
 
     suspend fun deletePackage(id: String) =
         apiInterface.deletePackage(id)

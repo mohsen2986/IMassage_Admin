@@ -67,7 +67,7 @@
         android:textStyle="bold"
         android:drawableEnd="@drawable/ic_massage"
         android:drawablePadding="@dimen/margin_4_4_4_8"
-        android:text="@{packages.massageId}"
+        android:text="@{packages.massageId.name}"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toBottomOf="@+id/row_packages_packageName"
         tools:text="ماساژ فوق سامورایی" />
@@ -116,6 +116,7 @@
         android:padding="@dimen/margin_8_8_8_16"
         android:tint="@color/black_low"
         android:elevation="4dp"
+        android:onClick="@{(v) -> onClick.onClickItem(packages)}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_delete" />

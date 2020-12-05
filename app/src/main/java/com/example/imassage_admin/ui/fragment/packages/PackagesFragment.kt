@@ -90,7 +90,7 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
 
-                viewModel.uploadPackages(body , "Package From Phone" , "this is a test" , "2000" , "1")
+                viewModel.uploadPackages(body , "Package From Phone" , "this is a test" , "2000" , "1" , "1")
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
@@ -134,6 +134,13 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
     }
     private fun bindAdapter(){
         fra_package_recycler.adapter = adapter
+        adapter.onClickHandler = object: OnCLickHandler<Package>{
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Package) {}
+            override fun onClickItem(element: Package) {
+                deletePackage(element.packageId)
+            }
+        }
     }
     private fun uiActions(){
         binding.onClick = object: OnCLickHandler<Nothing>{
@@ -154,6 +161,14 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
             // Do something with the result
             if(result == StaticVariables.REFRESH){
                 bindUI()
+            }
+        }
+    }
+    private fun deletePackage(id: String) = launch{
+        when(val callback = viewModel.deletePackage(id)){
+            is NetworkResponse.Success -> {
+                bindUI()
+                Toast.makeText(context, "ماساژ حدف شد.", Toast.LENGTH_LONG).show()
             }
         }
     }

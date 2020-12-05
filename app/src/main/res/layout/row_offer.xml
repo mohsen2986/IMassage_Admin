@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="order"
+            type="com.example.imassage_admin.data.model.Order"
+            />
         <variable
             name="isUsed"
             type="java.lang.Boolean" />
@@ -115,7 +118,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
+                />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+<!--                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
+-->

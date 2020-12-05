@@ -85,6 +85,7 @@ class QuestionFragment : ScopedFragment() , KodeinAware {
         adapter.onClickHandler = object: OnCLickHandler<Question>{
             override fun onClickItem(element: Question) {
                 deleteQuestion(element.questionId)
+                bindUI()
             }
 
             override fun onClick(view: View) {}

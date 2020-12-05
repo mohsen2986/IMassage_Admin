@@ -91,6 +91,8 @@
     <string name="answers">پاسخ‌های</string>
     <string name="add_package">افزودن پکیج</string>
     <string name="package_name">نام پکیج</string>
+    <string name="package_price">قیمت پکیج</string>
+    <string name="package_length">زمان پکیج</string>
     <string name="select_massage">انتخاب ماساژ</string>
     <string name="description">توضیحات</string>
     <string name="add_massage">افزودن ماساژ</string>

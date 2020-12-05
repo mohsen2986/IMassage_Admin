@@ -79,6 +79,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
             override fun handleOnBackPressed() {
 //                 Handle the back button event
+                requireActivity().onBackPressed()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
@@ -113,7 +114,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
                 viewModel.uploadPackages(body , fra_add_package_packageName.text.toString() , fra_add_package_description.text.toString()
-                        , fra_add_package_cost.text.toString() , selectedMassage)
+                        , fra_add_package_cost.text.toString() , selectedMassage , fra_add_package_length.text.toString() )
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }

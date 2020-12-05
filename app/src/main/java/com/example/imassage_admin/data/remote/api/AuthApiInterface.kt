@@ -87,7 +87,8 @@ interface AuthApiInterface{
             @Query("name") name: String ,
             @Query("description") description: String ,
             @Query("cost") cost: String ,
-            @Query("massage_id") massageId: String
+            @Query("massage_id") massageId: String ,
+            @Query("length") length: String
     ): NetworkResponse<PackageResponse ,ErrorResponse>
 
     @DELETE("packages/{id}")

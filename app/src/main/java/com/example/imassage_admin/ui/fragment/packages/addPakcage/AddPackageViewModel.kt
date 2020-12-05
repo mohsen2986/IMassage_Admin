@@ -8,8 +8,8 @@ class AddPackageViewModel(
     private val dataRepository: DataRepository
 ) : ViewModel() {
 
-    suspend fun uploadPackages(image: MultipartBody.Part, name: String, description: String, cost: String, massageId: String ) =
-        dataRepository.uploadPackage(image , name , description , cost , massageId)
+    suspend fun uploadPackages(image: MultipartBody.Part, name: String, description: String, cost: String, massageId: String , length: String) =
+        dataRepository.uploadPackage(image , name , description , cost , massageId , length)
 
     suspend fun massages() =
             dataRepository.getMassages()
