@@ -195,4 +195,10 @@ interface AuthApiInterface{
     suspend fun deleteOffer(
             @Path("id") id: String
     ): NetworkResponse<Offer,ErrorResponse >
+
+    //get orders
+    @POST("reservedOrders")
+    suspend fun reservedOrders(
+            @Query("page") page: Int?
+    ): NetworkResponse< OrderResponse , ErrorResponse>
 }
