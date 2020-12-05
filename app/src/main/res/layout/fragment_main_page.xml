@@ -9,6 +9,11 @@
             name="onClick"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
+        <variable
+            name="order"
+            type="com.example.imassage_admin.data.model.Order"
+            />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -65,13 +70,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/fra_main_page_appBar">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/fra_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_12_16_16_32"
                     android:text="@string/next_reservation"
                     android:textColor="@color/blue_50"
                     android:textSize="@dimen/text_14_16_16_24"
+                    android:onClick="@{onClick::onClick}"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -101,6 +107,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/back_circle_white"
                         android:scaleType="centerCrop"
+                        android:loadImage="@{order.user.photo}"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -120,6 +127,7 @@
                         android:textColor="@color/blue_50"
                         android:textSize="@dimen/text_14_16_18_24"
                         android:textStyle="bold"
+                        android:text="@{order.user.name.concat(` `).concat(order.user.family)}"
                         app:layout_constraintEnd_toStartOf="@id/fra_main_page_next_gender"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -148,6 +156,7 @@
                     android:textColor="@color/blue_50"
                     android:textSize="@dimen/text_14_16_18_24"
                     android:textStyle="bold"
+                    android:text="@{order.times.get(0).time.substring(1) + `: ساعت`}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -171,7 +180,7 @@
                     android:paddingBottom="@dimen/margin_8_8_8_16">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/fra_main_page_reserved"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_8_12_16_20"

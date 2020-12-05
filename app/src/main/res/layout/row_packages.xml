@@ -36,6 +36,7 @@
             android:layout_width="@dimen/road_72_80_96_120"
             android:layout_height="@dimen/road_72_80_96_120"
             android:layout_margin="@dimen/margin_1_1_2_3"
+            android:loadImage="@{packages.image}"
             tools:srcCompat="@drawable/ic_massage"
             />
     </com.google.android.material.card.MaterialCardView>
@@ -66,6 +67,7 @@
         android:textStyle="bold"
         android:drawableEnd="@drawable/ic_massage"
         android:drawablePadding="@dimen/margin_4_4_4_8"
+        android:text="@{packages.massageId}"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toBottomOf="@+id/row_packages_packageName"
         tools:text="ماساژ فوق سامورایی" />
@@ -80,6 +82,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{packages.cost}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/row_packages_description"
         tools:text="99,000 تومان" />
@@ -96,6 +99,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{packages.description}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/row_packages_cost"

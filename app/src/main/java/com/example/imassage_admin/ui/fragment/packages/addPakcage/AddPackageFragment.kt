@@ -75,13 +75,13 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
         bindUI()
         uiActions()
 
-//        setFragmentResult("requestKey", bundleOf("bundleKey" to StaticVariables.REFRESH))
-//        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
-//            override fun handleOnBackPressed() {
+        setFragmentResult("requestKey", bundleOf("bundleKey" to StaticVariables.REFRESH))
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
+            override fun handleOnBackPressed() {
 //                 Handle the back button event
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
     private fun bindUI() =launch {
@@ -141,6 +141,8 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
                     mediaPath = cursor.getString(columnIndex)
                     // Set the Image in ImageView for Previewing the Media
 //                    imageView.setImageBitmap(BitmapFactory.decodeFile(mediaPath))
+                    binding.imageUri = fileUri
+
                     cursor.close()
                     postPath = mediaPath
                 }

@@ -67,6 +67,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{order.times.get(0).time}"
             app:layout_constraintEnd_toStartOf="@+id/row_bills_date"
             app:layout_constraintTop_toBottomOf="@+id/row_bills_name_family"
             tools:text="22:00" />

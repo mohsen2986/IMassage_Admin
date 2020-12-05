@@ -9,12 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsetsAnimationController
 import androidx.core.app.ActivityCompat
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.R
 import com.example.imassage_admin.databinding.FragmentMainPageBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.example.imassage_admin.ui.utils.StaticVariables
+import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.android.synthetic.main.fragment_main_page.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -52,9 +55,12 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
         ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE) ,1)
     }
     private fun bindUI() = launch{
-        /*main_txt.setOnClickListener {
-            navController.navigate(R.id.action_mainPageFragment_to_aboutUsFragment)
-        }*/
+        when(val callback = viewModel.reservedOrders()){
+            is NetworkResponse.Success -> {
+                if(callback.body.data.isNotEmpty())
+                    binding.order = callback.body.data[0]
+            }
+        }
     }
     private fun UIActions(){
         binding.onClick = object: OnCLickHandler<Nothing>{
@@ -71,7 +77,7 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                     fra_main_page_massage ->
                         navController.navigate(R.id.action_mainPageFragment_to_massageFragment)
                     fra_main_page_payments ->
-                        navController.navigate(R.id.action_mainPageFragment_to_historyFragment)
+                        navController.navigate(R.id.action_mainPageFragment_to_historyFragment , bundleOf(StaticVariables.RESERVE_TYPE to StaticVariables.HISTORY))
                     fra_main_page_config_time ->
                         navController.navigate(R.id.action_mainPageFragment_to_configFragment)
                     fra_main_page_config_date ->
@@ -80,6 +86,10 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                         navController.navigate(R.id.action_mainPageFragment_to_usersFragment)
                     fra_main_page_question ->
                         navController.navigate(R.id.action_mainPageFragment_to_questionFragment)
+                    fra_main_page_offer_token ->
+                        navController.navigate(R.id.action_mainPageFragment_to_offerFragment)
+                    fra_text ->
+                        navController.navigate(R.id.action_mainPageFragment_to_historyFragment , bundleOf(StaticVariables.RESERVE_TYPE to StaticVariables.RESERVE_TIME))
                 }
             }
 

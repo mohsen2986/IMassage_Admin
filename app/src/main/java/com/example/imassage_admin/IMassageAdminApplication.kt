@@ -69,7 +69,7 @@ class IMassageAdminApplication(
         bind() from provider { LoginViewModelFactory(instance()) }
         bind() from provider { PhoneVerificationViewModelFactory(instance()) }
 
-        bind() from provider { MainPageViewModelFactory() }
+        bind() from provider { MainPageViewModelFactory(instance()) }
         bind() from provider { AboutUsViewModelFactory(instance()) }
         bind() from provider { SliderViewModelFactory(instance())}
         bind() from provider { MassageViewModelFactory(instance())}

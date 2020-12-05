@@ -107,6 +107,7 @@ class AddMassageFragment : ScopedFragment() , KodeinAware{
                     mediaPath = cursor.getString(columnIndex)
                     // Set the Image in ImageView for Previewing the Media
 //                    imageView.setImageBitmap(BitmapFactory.decodeFile(mediaPath))
+                    binding.imageUri = fileUri
                     cursor.close()
                     postPath = mediaPath
                 }

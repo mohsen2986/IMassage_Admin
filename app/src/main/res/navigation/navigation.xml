@@ -64,7 +64,13 @@
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.imassage_admin.ui.fragment.history.HistoryFragment"
-        android:label="HistoryFragment" >
+        android:label="HistoryFragment"
+        >
+        <argument
+            android:name="reserve_type"
+            app:argType="string"
+            />
+
         <action
             android:id="@+id/action_historyFragment_to_showAnswersFragment"
             app:destination="@id/showAnswersFragment" />

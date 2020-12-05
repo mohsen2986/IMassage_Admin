@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fra_signUp_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_test"
+        android:transitionGroup="true"
+        tools:context=".ui.fragment.signUp.SignUpFragment">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to_imassage"
+            android:textAppearance="@style/TextAppearance.AppCompat.TextView.bold_20"
+            android:textColor="@color/blue_50"
+            android:textSize="@dimen/fra_sign_up_welcome_dimen"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16_24_24_72"
+            android:layout_marginEnd="@dimen/margin_16_24_24_72"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65"
+            app:strokeColor="@color/black_medium"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/fra_signUp_choose_image"
+                    android:layout_width="@dimen/fra_sign_up_image"
+                    android:layout_height="@dimen/fra_sign_up_image"
+                    android:layout_marginTop="@dimen/margin_top_8_16_32_64"
+                    android:background="@drawable/sign_up_image_back"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_add_photo_120"
+                    app:tint="@color/overlay_dark_50" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_8_12_16_32"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/name"
+                    android:layoutDirection="rtl"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fra_signUp_choose_image"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_signUp_name"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:digits="ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی ءئؤآة"
+                        android:textAlignment="viewStart" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_4_6_8"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/family"
+                    android:layoutDirection="rtl"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_signUp_family"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:digits="ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی ءئؤآة"
+                        android:textAlignment="viewStart" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_signUp_man_woman_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:checkedButton="@+id/fra_signUp_man"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_signUp_woman"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:text="@string/woman"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_signUp_man"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:text="@string/man"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:translationX="-1dp"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="24dp" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_signUp_next"
+                    style="@style/Widget.MaterialComponents.Button.Customize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8_12_16_32"
+                    android:layout_marginBottom="@dimen/margin_top_8_16_32_64"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    android:text="@string/next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_signUp_man_woman_group" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_signUp_go_to_login"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Customize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    android:text="@string/i_have_account"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_signUp_next"
+                    app:layout_constraintEnd_toStartOf="@+id/fra_signUp_next"
+                    app:layout_constraintTop_toTopOf="@+id/fra_signUp_next"
+                    app:strokeColor="@color/purple_400"
+                    app:strokeWidth="1dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/go_for_register"
+            android:textAppearance="@style/TextAppearance.AppCompat.TextView.normal_16"
+            android:textColor="@color/blue_50"
+            android:textSize="@dimen/text_14_16_18_24"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

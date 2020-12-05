@@ -37,6 +37,7 @@
             android:layout_width="@dimen/road_72_80_96_120"
             android:layout_height="@dimen/road_72_80_96_120"
             android:layout_margin="@dimen/margin_1_1_2_3"
+            android:loadImage="@{massage.image}"
             tools:srcCompat="@drawable/ic_massage"
             />
     </com.google.android.material.card.MaterialCardView>
@@ -71,6 +72,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{massage.cost}"
         app:layout_constraintBottom_toBottomOf="@+id/row_packages_cardView"
         app:layout_constraintEnd_toStartOf="@+id/row_packages_cardView"
         app:layout_constraintTop_toBottomOf="@+id/row_massage_massageName"
@@ -88,6 +90,7 @@
         android:textColor="@color/black_low"
         android:textSize="@dimen/text_14_16_18_24"
         android:textStyle="bold"
+        android:text="@{massage.description}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

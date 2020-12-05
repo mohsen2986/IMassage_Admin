@@ -161,4 +161,7 @@ class DataRepository(
 
     suspend fun deleteOffer(id: String) =
             apiInterface.deleteOffer(id)
+
+    suspend fun reservedOrders(page: Int) =
+            apiInterface.reservedOrders(page)
 }
