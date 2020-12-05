@@ -7,7 +7,7 @@
             />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/row_massage_container"
+    android:id="@+id/row_users_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
