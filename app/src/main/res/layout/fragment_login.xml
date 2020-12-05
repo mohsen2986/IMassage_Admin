@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fra_login_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_test"
+        android:transitionGroup="true"
+        tools:context=".ui.fragment.login.LoginFragment">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_start_end"
+            android:layout_marginEnd="@dimen/card_margin_start_end"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/black_medium"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fra_login_layout_mobile"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_16_24_32_64"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:hint="@string/mobile_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:placeholderText="9*********"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16"
+                    app:startIconDrawable="@drawable/ic_mobile">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_login_mobile"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0987654321"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fra_login_layout_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_8_8_8_16"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:hint="@string/password"
+                    android:layoutDirection="rtl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_login_layout_mobile"
+                    app:passwordToggleEnabled="true"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_login_password"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:inputType="textPassword"
+                        android:textAlignment="viewEnd"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_login_LoginButton"
+                    style="@style/Widget.MaterialComponents.Button.Customize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8_16_16_32"
+                    android:layout_marginBottom="@dimen/margin_16_24_32_64"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    android:text="@string/login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/fra_login_layout_password"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_login_reset_password" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/fra_login_show_status"
+                    android:layout_width="@dimen/width_24_24_28_40"
+                    android:layout_height="@dimen/width_24_24_28_40"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_login_LoginButton"
+                    app:layout_constraintEnd_toEndOf="@+id/fra_login_LoginButton"
+                    app:layout_constraintStart_toStartOf="@+id/fra_login_LoginButton"
+                    app:layout_constraintTop_toTopOf="@+id/fra_login_LoginButton" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_login_reset_password"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4_4_4_8"
+                    android:text="@string/reset_password"
+                    android:textSize="@dimen/text_12_14_16_18"
+                    android:textColor="@color/overlay_dark_80"
+                    app:cornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@+id/fra_login_layout_password"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_login_layout_password" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_login_back"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    android:text="@string/back"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_login_LoginButton"
+                    app:layout_constraintEnd_toStartOf="@+id/fra_login_LoginButton"
+                    app:layout_constraintTop_toTopOf="@+id/fra_login_LoginButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
