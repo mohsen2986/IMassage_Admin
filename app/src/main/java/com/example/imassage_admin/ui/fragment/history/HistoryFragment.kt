@@ -55,7 +55,7 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this , viewModelFactory).get(HistoryViewModel::class.java)
-        configViewModel("")
+        configViewModel(requireArguments().getString(StaticVariables.RESERVE_TYPE).toString())
         configureObservables()
         initAdapter()
         bindUI()
@@ -64,7 +64,6 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
     private fun bindUI() = launch {
 
     }
-
     override fun onStart() {
         super.onStart()
         viewModel.refreshAllList()
