@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="order"
@@ -12,14 +14,10 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row_bills_container"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:onClick="@{ (v) -> onClick.onClickItem(order)}"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        >
+        android:onClick="@{ (v) -> onClick.onClickItem(order)}">
 
 
 
@@ -86,8 +84,64 @@
             android:text="@{order.transactions.amountWithOffer}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/row_bills_date"
-            app:layout_constraintTop_toBottomOf="@+id/row_bills_date"
+            app:layout_constraintTop_toBottomOf="@+id/row_bills_package"
             tools:text="99,000 تومان" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_1_1_2_3"
+            android:background="@drawable/row_order_view_back"
+            android:layout_marginTop="@dimen/margin_4_4_4_8"
+            app:layout_constraintTop_toBottomOf="@+id/row_bills_date"
+            app:layout_constraintEnd_toEndOf="@id/row_bills_package"
+            app:layout_constraintStart_toStartOf="@id/row_bills_package"/>
+
+
+        <TextView
+            android:id="@+id/row_bills_massage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_12_16_16_32"
+            android:layout_marginTop="@dimen/margin_8_8_8_16"
+            android:layout_marginStart="@dimen/margin_12_16_16_32"
+            android:drawableEnd="@drawable/ic_massage"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            tools:text="ماساژ سوپر سامورایی لش اضافه" />
+
+        <TextView
+            android:id="@+id/row_bills_package"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4_4_4_8"
+            android:layout_marginBottom="@dimen/margin_8_8_8_16"
+            android:drawableEnd="@drawable/ic_package"
+            android:drawablePadding="@dimen/margin_4_4_4_8"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/text_14_16_18_24"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/row_bills_massage"
+            app:layout_constraintStart_toStartOf="@+id/row_bills_massage"
+            app:layout_constraintTop_toBottomOf="@+id/row_bills_massage"
+            tools:text="آقای حسین نیازی" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_1_1_2_3"
+            android:layout_marginTop="@dimen/margin_4_4_4_8"
+            android:background="@drawable/row_order_view_back"
+            app:layout_constraintTop_toBottomOf="@+id/row_bills_package"
+            app:layout_constraintEnd_toEndOf="@id/row_bills_package"
+            app:layout_constraintStart_toStartOf="@id/row_bills_package"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

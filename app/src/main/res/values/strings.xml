@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IMassage</string>
+    <string name="app_name">Jazire Aramesh Admin</string>
     <string name="massage_reservation">IMassage</string>
     <string name="mobile_number">شماره تلفن</string>
     <string name="password">رمز عبور</string>
@@ -133,6 +133,9 @@
     <string name="enter_mobile_number">شماره موبایل خود را وارد نمایید</string>
     <string name="reset">بازیابی</string>
     <string name="new_password">رمزعبور جدید</string>
+    <string name="reservationn">رزروشده‌ها</string>
+    <string name="start_date">تاریخ شروع</string>
+    <string name="end_date">تاریخ پایان</string>
     <string-array name="genders">
         <item>آقا</item>
         <item>خانم</item>
