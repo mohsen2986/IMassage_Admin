@@ -184,7 +184,10 @@ interface AuthApiInterface{
     @POST("offer")
     suspend fun createOffer(
             @Query("number") number: String ,
-            @Query("percent") percent: String
+            @Query("percent") percent: String ,
+            @Query("massage") massageId: String,
+            @Query("start_date") startTime: String ,
+            @Query("expire_date") expireTime: String
     ): NetworkResponse< OfferResponse , ErrorResponse>
 
     @GET("offer")
