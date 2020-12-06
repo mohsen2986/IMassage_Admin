@@ -145,7 +145,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.TextView.bold_16"
-
                 android:textAlignment="viewStart"
                 android:textSize="@dimen/text_14_16_16_20"
                 android:inputType="none"

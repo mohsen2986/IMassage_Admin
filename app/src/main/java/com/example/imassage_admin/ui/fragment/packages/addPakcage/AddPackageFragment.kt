@@ -54,6 +54,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var massages: List<Massage>
     private lateinit var selectedMassage: String
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -162,6 +163,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
     }
     private fun getMassageId(massageName: String) =
         massages.find { it.name == massageName }!!.id
+
     private fun uiActions(){
         binding.onClick = object: OnCLickHandler<Nothing>{
             override fun onClickItem(element: Nothing) {}
@@ -180,8 +182,5 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
             Toast.makeText(context ,"${parent?.getItemAtPosition(position)}" , Toast.LENGTH_LONG).show()
             selectedMassage = getMassageId(parent?.getItemAtPosition(position).toString())
         }
-
     }
-
-
 }
