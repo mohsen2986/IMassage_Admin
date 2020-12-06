@@ -205,4 +205,14 @@ interface AuthApiInterface{
     suspend fun reservedOrders(
             @Query("page") page: Int?
     ): NetworkResponse< OrderResponse , ErrorResponse>
+
+    // get consulting
+    @POST("consultingUsers")
+    suspend fun getConsulting(
+    ): NetworkResponse< UsersResponse , ErrorResponse>
+
+    @POST("setConsultingUser")
+    suspend fun setConsultingUser(
+        @Query("user") userId: String
+    ): NetworkResponse< Unit , ErrorResponse>
 }

@@ -164,4 +164,11 @@ class DataRepository(
 
     suspend fun reservedOrders(page: Int) =
             apiInterface.reservedOrders(page)
+
+    // consulting
+    suspend fun getConsulting() =
+        apiInterface.getConsulting()
+
+    suspend fun setConsultingUser(userId: String) =
+        apiInterface.setConsultingUser(userId)
 }
