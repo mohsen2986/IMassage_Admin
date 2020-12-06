@@ -90,6 +90,8 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
                         navController.navigate(R.id.action_mainPageFragment_to_offerFragment)
                     fra_main_page_reserved ->
                         navController.navigate(R.id.action_mainPageFragment_to_historyFragment , bundleOf(StaticVariables.RESERVE_TYPE to StaticVariables.RESERVE_TIME))
+                    fra_main_page_help ->
+                        navController.navigate(R.id.action_mainPageFragment_to_consultingUsersFragment)
                 }
             }
 

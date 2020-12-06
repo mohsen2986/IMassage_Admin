@@ -7,6 +7,7 @@ import com.example.imassage_admin.data.remote.api.AuthApiInterface
 import com.example.imassage_admin.data.repository.DataRepository
 import com.example.imassage_admin.data.repository.TokenRepository
 import com.example.imassage_admin.data.repository.UserInformationRepository
+import com.example.imassage_admin.ui.fragment.ConsultingUsers.ConsultingUsersViewModelFactory
 import com.example.imassage_admin.ui.fragment.aboutUs.AboutUsViewModelFactory
 import com.example.imassage_admin.ui.fragment.config.ConfigTimes.ConfigTimesViewModelFactory
 import com.example.imassage_admin.ui.fragment.config.ConfigViewModelFactory
@@ -86,6 +87,7 @@ class IMassageAdminApplication(
         bind() from provider { ShowAnswersViewModelFactory(instance())}
         bind() from provider { OfferViewModelFactory(instance())}
         bind() from provider { AddOfferViewModelFactory(instance())}
+        bind() from provider { ConsultingUsersViewModelFactory(instance())}
     }
 
     override fun onCreate() {

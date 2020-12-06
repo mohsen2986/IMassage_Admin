@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_offerFragment"
             app:destination="@id/offerFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_consultingUsersFragment"
+            app:destination="@id/consultingUsersFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
@@ -217,4 +220,8 @@
         android:id="@+id/addOfferFragment"
         android:name="com.example.imassage_admin.ui.fragment.offer.addOffer.AddOfferFragment"
         android:label="AddOfferFragment" />
+    <fragment
+        android:id="@+id/consultingUsersFragment"
+        android:name="com.example.imassage_admin.ui.fragment.ConsultingUsers.ConsultingUsersFragment"
+        android:label="ConsultingUsersFragment" />
 </navigation>
