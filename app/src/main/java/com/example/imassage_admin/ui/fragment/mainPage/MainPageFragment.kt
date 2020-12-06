@@ -57,8 +57,8 @@ class MainPageFragment : ScopedFragment() , KodeinAware{
     private fun bindUI() = launch{
         when(val callback = viewModel.reservedOrders()){
             is NetworkResponse.Success -> {
-                if(callback.body.data.isNotEmpty())
-                    binding.order = callback.body.data[0]
+//                if(callback.body.data.isNotEmpty())
+//                    binding.order = callback.body.data[0]
             }
         }
     }
