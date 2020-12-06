@@ -46,14 +46,12 @@
                 android:layout_height="@dimen/width_48_48_48_64"
                 android:layout_marginStart="16dp"
                 android:padding="@dimen/padding_8_4_0"
-                android:tint="@color/blue_50"
-                android:onClick="@{onClick::onClick}"
-                />
+                android:tint="@color/blue_50" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
+            android:id="@+id/textInputLayout2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,6 +68,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fra_add_offer_percent"
                 style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:onClick="@{onClick::onClick}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
@@ -92,8 +91,10 @@
             android:layoutDirection="rtl"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
             app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fra_add_offer_numbers"
@@ -104,8 +105,41 @@
                 android:inputType="number"
                 android:digits="1234567890"
                 android:textSize="@dimen/text_14_16_16_20"
-                tools:text="fa_Eze" />
+                android:onClick="@{onClick::onClick}"
+                tools:text="fa_Eze"
+                />
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:hint="@string/select_massage"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <AutoCompleteTextView
+                android:id="@+id/fra_add_offer_select_massage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_16_20"
+                android:inputType="none"
+                tools:text="پکیج رونق اقتصادی"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:drawableEnd="@drawable/ic_drop_down"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -122,6 +156,69 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/start_date"
+            android:layoutDirection="rtl"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_offer_start_date"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="none"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_18_24"
+                android:onClick="@{onClick::onClick}"
+                tools:text="1399/01/01"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/end_date"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_offer_end_date"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="none"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/text_14_16_18_24"
+                android:onClick="@{onClick::onClick}"
+                tools:text="1399/01/01"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

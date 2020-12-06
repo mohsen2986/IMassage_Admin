@@ -156,8 +156,8 @@ class DataRepository(
     suspend fun offers(page: Int) =
             apiInterface.offers(page)
 
-    suspend fun createOffer(number: String , precent: String) =
-            apiInterface.createOffer(number , precent)
+    suspend fun createOffer(number: String , precent: String , massageId: String , startTime: String , expireTime: String ) =
+            apiInterface.createOffer(number , precent , massageId , startTime , expireTime)
 
     suspend fun deleteOffer(id: String) =
             apiInterface.deleteOffer(id)

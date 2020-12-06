@@ -5,10 +5,6 @@
 
     <data>
         <variable
-            name="order"
-            type="com.example.imassage_admin.data.model.Order"
-            />
-        <variable
             name="isUsed"
             type="java.lang.Boolean" />
     </data>
@@ -79,7 +75,6 @@
             android:layout_marginBottom="@dimen/margin_8_12_16_20"
             android:drawableEnd="@drawable/ic_date"
             android:drawablePadding="@dimen/margin_4_4_4_8"
-            android:text="@{order.reservedTimeDateId.date}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
@@ -94,7 +89,6 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_date"
             android:drawablePadding="@dimen/margin_4_4_4_8"
-            android:text="@{order.reservedTimeDateId.date}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"

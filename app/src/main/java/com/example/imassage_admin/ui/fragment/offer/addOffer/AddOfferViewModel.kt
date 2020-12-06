@@ -7,6 +7,9 @@ class AddOfferViewModel(
         private val dataRepository: DataRepository
 ) : ViewModel() {
 
-    suspend fun createOffer(number: String , perecent: String) =
-            dataRepository.createOffer(number , perecent)
+    suspend fun createOffer(number: String , perecent: String , massageId: String , startTime: String , expireTime: String) =
+            dataRepository.createOffer(number , perecent , massageId , startTime , expireTime)
+
+    suspend fun massages() =
+            dataRepository.getMassages()
 }
