@@ -6,4 +6,10 @@ import com.example.imassage_admin.data.repository.DataRepository
 class ConsultingUsersViewModel(
     private val dataRepository: DataRepository
 ) : ViewModel() {
+
+    suspend fun getConsultingUsers() =
+        dataRepository.getConsulting()
+
+    suspend fun setConsultingUser(userId: String) =
+        dataRepository.setConsultingUser(userId)
 }
