@@ -80,7 +80,7 @@ class RecyclerAdapter<T> (
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(getItemViewType(position)){
             R.layout.row_loading -> (holder as LoadingViewHolder).bind()
-            R.layout.row_item -> (holder as ItemViewHolder).bind(getItem(position) as User, null)
+            R.layout.row_item -> (holder as ItemViewHolder).bind(getItem(position) as User, onClick = onClickHandler)
             R.layout.row_order -> (holder as OrderViewHolder).bind(getItem(position) as Order , onClick =  onClickHandler)
             R.layout.row_offer -> (holder as OfferViewHolder).bind(getItem(position) as Offer  , onClick =  onClickHandler)
         }

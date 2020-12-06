@@ -170,7 +170,8 @@ interface AuthApiInterface{
     // order
     @GET("order")
     suspend fun order(
-            @Query("page") page: Int?
+            @Query("page") page: Int? ,
+            @Query("user") user: String?
     ): NetworkResponse< OrderResponse , ErrorResponse>
 
     // answers

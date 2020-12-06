@@ -45,7 +45,10 @@ class OrderDataSource<T>(
         networkState.postValue(NetworkState.RUNNING)
         scope.launch (getJobErrorHandler() + supervisorJob){
             delay(200)
-            val request = if(query == StaticVariables.HISTORY) repository.orders(page) else repository.reservedOrders(page)
+            val request = if(query == StaticVariables.HISTORY) repository.orders(page , null)
+                        else if(query == StaticVariables.RESERVE_TIME)repository.reservedOrders(page)
+                        else repository.orders(page , query)
+
             retryQuery = null
             networkState.postValue(NetworkState.SUCCESS)
             when(request){
@@ -59,7 +62,10 @@ class OrderDataSource<T>(
 
     private fun loadInitial(callBack:(List<T>) -> Unit ){
         scope.launch (getJobErrorHandler() + supervisorJob){
-            val callback_ = if(query == StaticVariables.HISTORY) repository.orders(0) else repository.reservedOrders(0)
+            val callback_ =  if(query == StaticVariables.HISTORY) repository.orders(0 , null)
+                        else if(query == StaticVariables.RESERVE_TIME)repository.reservedOrders(0)
+                        else repository.orders(0 , query)
+
             when(callback_){
                 is NetworkResponse.Success -> pages = callback_.body.metadata.pagination.totalPages
             }
