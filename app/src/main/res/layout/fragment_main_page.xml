@@ -536,6 +536,42 @@
 
                     </com.google.android.material.card.MaterialCardView>
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fra_main_page_help"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/margin_8_8_8_16"
+                        android:layout_marginBottom="@dimen/margin_8_8_8_16"
+                        android:backgroundTint="@color/blue_50"
+                        android:onClick="@{onClick::onClick}"
+                        app:cardCornerRadius="@dimen/margin_8_12_16_24"
+                        app:layout_constraintDimensionRatio="w,1:2"
+                        app:layout_constraintEnd_toEndOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintTop_toBottomOf="@+id/fra_main_page_question"
+                        app:strokeColor="@color/overlay_dark_40"
+                        app:strokeWidth="@dimen/margin_1_1_2_3">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_8_12_16_24"
+                            android:layout_marginBottom="@dimen/margin_8_12_16_24"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="@string/help"
+                            android:textColor="@color/black_high"
+                            android:textSize="@dimen/text_14_16_18_24"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
