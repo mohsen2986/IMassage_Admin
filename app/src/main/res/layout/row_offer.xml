@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="isUsed"
             type="java.lang.Boolean" />
@@ -76,7 +75,6 @@
             android:layout_marginBottom="@dimen/margin_8_12_16_20"
             android:drawableEnd="@drawable/ic_date"
             android:drawablePadding="@dimen/margin_4_4_4_8"
-            android:text="@{order.reservedTimeDateId.date}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
@@ -91,7 +89,6 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_date"
             android:drawablePadding="@dimen/margin_4_4_4_8"
-            android:text="@{order.reservedTimeDateId.date}"
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
@@ -115,7 +112,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
+                />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+<!--                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
+-->

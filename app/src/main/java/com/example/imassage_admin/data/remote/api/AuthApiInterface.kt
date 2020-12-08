@@ -87,7 +87,8 @@ interface AuthApiInterface{
             @Query("name") name: String ,
             @Query("description") description: String ,
             @Query("cost") cost: String ,
-            @Query("massage_id") massageId: String
+            @Query("massage_id") massageId: String ,
+            @Query("length") length: String
     ): NetworkResponse<PackageResponse ,ErrorResponse>
 
     @DELETE("packages/{id}")
@@ -169,7 +170,8 @@ interface AuthApiInterface{
     // order
     @GET("order")
     suspend fun order(
-            @Query("page") page: Int?
+            @Query("page") page: Int? ,
+            @Query("user") user: String?
     ): NetworkResponse< OrderResponse , ErrorResponse>
 
     // answers
@@ -183,7 +185,10 @@ interface AuthApiInterface{
     @POST("offer")
     suspend fun createOffer(
             @Query("number") number: String ,
-            @Query("percent") percent: String
+            @Query("percent") percent: String ,
+            @Query("massage") massageId: String,
+            @Query("start_date") startTime: String ,
+            @Query("expire_date") expireTime: String
     ): NetworkResponse< OfferResponse , ErrorResponse>
 
     @GET("offer")
@@ -195,4 +200,20 @@ interface AuthApiInterface{
     suspend fun deleteOffer(
             @Path("id") id: String
     ): NetworkResponse<Offer,ErrorResponse >
+
+    //get orders
+    @POST("reservedOrders")
+    suspend fun reservedOrders(
+            @Query("page") page: Int?
+    ): NetworkResponse< OrderResponse , ErrorResponse>
+
+    // get consulting
+    @POST("consultingUsers")
+    suspend fun getConsulting(
+    ): NetworkResponse< UsersResponse , ErrorResponse>
+
+    @POST("setConsultingUser")
+    suspend fun setConsultingUser(
+        @Query("user") userId: String
+    ): NetworkResponse< Unit , ErrorResponse>
 }

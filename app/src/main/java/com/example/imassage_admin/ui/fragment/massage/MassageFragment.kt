@@ -159,8 +159,10 @@ class MassageFragment : ScopedFragment() , KodeinAware {
     }
     private fun deleteMassage(id: String) = launch{
         when(val callback = viewModel.deleteMassage(id)){
-            is NetworkResponse.Success ->
-                Toast.makeText(context , "ماساژ حدف شد." , Toast.LENGTH_LONG).show()
+            is NetworkResponse.Success -> {
+                bindUI()
+                Toast.makeText(context, "ماساژ حدف شد.", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

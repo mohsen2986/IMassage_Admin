@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.example.imassage_admin.data.remote.model.NetworkState
 import com.example.imassage_admin.data.repository.DataRepository
+import com.example.imassage_admin.ui.utils.StaticVariables
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.coroutines.*
 
@@ -44,20 +45,28 @@ class OrderDataSource<T>(
         networkState.postValue(NetworkState.RUNNING)
         scope.launch (getJobErrorHandler() + supervisorJob){
             delay(200)
-            val request = repository.orders(page)
+            val request = if(query == StaticVariables.HISTORY) repository.orders(page , null)
+                        else if(query == StaticVariables.RESERVE_TIME)repository.reservedOrders(page)
+                        else repository.orders(page , query)
+
             retryQuery = null
             networkState.postValue(NetworkState.SUCCESS)
             when(request){
                 is NetworkResponse.Success ->{
                     callBack((request.body.data) as List<T>)
                     }
+                else -> Log.e("Log__" , "issue")
                 }
             }
         }
 
     private fun loadInitial(callBack:(List<T>) -> Unit ){
         scope.launch (getJobErrorHandler() + supervisorJob){
-            when(val callback_ = repository.orders(0)){
+            val callback_ =  if(query == StaticVariables.HISTORY) repository.orders(0 , null)
+                        else if(query == StaticVariables.RESERVE_TIME)repository.reservedOrders(0)
+                        else repository.orders(0 , query)
+
+            when(callback_){
                 is NetworkResponse.Success -> pages = callback_.body.metadata.pagination.totalPages
             }
 //            pages = repository.users(query).

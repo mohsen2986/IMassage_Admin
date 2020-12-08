@@ -107,6 +107,7 @@ class AddMassageFragment : ScopedFragment() , KodeinAware{
                     mediaPath = cursor.getString(columnIndex)
                     // Set the Image in ImageView for Previewing the Media
 //                    imageView.setImageBitmap(BitmapFactory.decodeFile(mediaPath))
+                    binding.imageUri = fileUri
                     cursor.close()
                     postPath = mediaPath
                 }
@@ -124,22 +125,26 @@ class AddMassageFragment : ScopedFragment() , KodeinAware{
         startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
     }
     private fun upload() = launch {
-        postPath?.let {
-            if (it.isNotEmpty()){
-                val imageFile = File(postPath!!)
+        if(fra_add_massage_cost.text?.isNotEmpty()!! && fra_add_massage_description.text?.isNotEmpty()!! && fra_add_massage_massageName.text?.isNotEmpty()!! ) {
+            postPath?.let {
+                if (it.isNotEmpty()) {
+                    val imageFile = File(postPath!!)
 
-                val requestBody = RequestBody.create(
-                        requireActivity().contentResolver.getType(fileUri!!)?.toMediaTypeOrNull() ,
-                        imageFile
-                )
-                val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
+                    val requestBody = RequestBody.create(
+                            requireActivity().contentResolver.getType(fileUri!!)?.toMediaTypeOrNull(),
+                            imageFile
+                    )
+                    val body = MultipartBody.Part.createFormData("image", imageFile.name, requestBody)
 
 
-                viewModel.uploadMassage(body , fra_add_massage_massageName.text.toString() , fra_add_massage_cost.text.toString() ,
-                        "2" , fra_add_massage_description.text.toString())
-            }else{
-                Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
+                    viewModel.uploadMassage(body, fra_add_massage_massageName.text.toString(), fra_add_massage_cost.text.toString(),
+                            "2", fra_add_massage_description.text.toString())
+                } else {
+                    Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
+                }
             }
+        }else{
+            Toast.makeText(requireContext() , "همه موارد را پر کنید." , Toast.LENGTH_SHORT).show()
         }
     }
 

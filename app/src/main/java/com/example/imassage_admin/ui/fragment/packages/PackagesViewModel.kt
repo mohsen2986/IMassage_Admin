@@ -11,8 +11,8 @@ class PackagesViewModel(
     suspend fun packages() =
         dataRepository.getPackages()
 
-    suspend fun uploadPackages(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String ) =
-        dataRepository.uploadPackage(image , name , description , cost , massageId)
+    suspend fun uploadPackages(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String , length: String ) =
+        dataRepository.uploadPackage(image , name , description , cost , massageId , length)
 
     suspend fun deletePackage(id: String) =
         dataRepository.deletePackage(id)

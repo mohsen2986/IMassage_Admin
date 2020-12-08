@@ -8,7 +8,7 @@ data class Order(
         @SerializedName("massage")
         val massage: Massage,
         @SerializedName("package")
-        val package_: Package,
+        val package_: String,
         @SerializedName("reserve_time")
         val reservedTimeDateId: DateTimes,
         @SerializedName("transaction")

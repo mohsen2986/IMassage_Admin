@@ -12,6 +12,7 @@ import com.example.imassage_admin.data.model.Massage
 import com.example.imassage_admin.data.model.Order
 import com.example.imassage_admin.data.remote.model.NetworkState
 import com.example.imassage_admin.data.repository.DataRepository
+import com.example.imassage_admin.ui.utils.StaticVariables
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -20,6 +21,7 @@ class HistoryViewModel(
         private val dataRepository: DataRepository
 ) : ViewModel() {
 
+    var pagingType = StaticVariables.HISTORY
     // DATA
     protected val ioScope = CoroutineScope(Dispatchers.IO)
 

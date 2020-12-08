@@ -70,9 +70,6 @@ class SliderFragment : ScopedFragment() , KodeinAware {
         bindUI()
         uiAcitons()
 
-//        val galleryIntent = Intent(Intent.ACTION_PICK,
-//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-//        startActivityForResult(galleryIntent, REQUEST_PICK_PHOTO)
     }
     private fun bindUI() = launch {
         when(val callbeck = viewModel.sliders()){

@@ -1,0 +1,9 @@
+package com.example.imassage_admin.data.remote.model
+
+import com.example.imassage_admin.data.model.User
+import com.google.gson.annotations.SerializedName
+
+data class UsersResponse(
+        @SerializedName("datas")
+        val data: List<User>
+)

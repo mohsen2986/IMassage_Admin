@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -8,6 +9,11 @@
             name="onClick"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
+        <variable
+            name="imageUri"
+            type="android.net.Uri"
+            />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,6 +72,7 @@
 
             <ImageView
                 android:id="@+id/fra_add_package_image"
+                android:setImageFromSD="@{imageUri}"
                 android:layout_width="@dimen/road_72_80_96_120"
                 android:layout_height="@dimen/road_72_80_96_120"
                 android:layout_margin="@dimen/margin_1_1_2_3"
@@ -138,7 +145,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.TextView.bold_16"
-
                 android:textAlignment="viewStart"
                 android:textSize="@dimen/text_14_16_16_20"
                 android:inputType="none"
@@ -158,7 +164,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="@dimen/margin_8_12_16_20"
-            android:hint="@string/package_name"
+            android:hint="@string/package_price"
             android:layoutDirection="rtl"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -177,9 +183,36 @@
                 tools:text="90,000"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/margin_8_12_16_20"
+            android:hint="@string/package_length"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fra_add_package_length"
+                style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:inputType="numberDecimal"
+                android:digits="1234567890"
+                android:textSize="@dimen/text_14_16_16_20"
+                tools:text="90,000"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -190,7 +223,7 @@
             android:layoutDirection="rtl"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
             app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
 
             <com.google.android.material.textfield.TextInputEditText

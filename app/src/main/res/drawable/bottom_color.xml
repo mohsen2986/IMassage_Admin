@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <layer-list>
+            <item android:top="-8dp" android:left="-8dp" android:right="-8dp">
+                <shape>
+                    <solid android:color="@android:color/transparent"/>
+                    <stroke android:color="#33b5e5" android:width="2dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_selected="false"/>
+</selector>

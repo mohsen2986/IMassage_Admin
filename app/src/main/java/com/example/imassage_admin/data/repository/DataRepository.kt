@@ -40,8 +40,8 @@ class DataRepository(
     suspend fun getPackages() =
         apiInterface.packages()
 
-    suspend fun uploadPackage(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String) =
-        apiInterface.uploadPackage(image , name , description , cost , massageId)
+    suspend fun uploadPackage(image: MultipartBody.Part , name: String ,  description: String , cost: String , massageId: String , length: String) =
+        apiInterface.uploadPackage(image , name , description , cost , massageId , length)
 
     suspend fun deletePackage(id: String) =
         apiInterface.deletePackage(id)
@@ -145,8 +145,8 @@ class DataRepository(
     )
 
     // order
-    suspend fun orders(page: Int?) =
-            apiInterface.order(page)
+    suspend fun orders(page: Int? , userId: String?) =
+            apiInterface.order(page , userId)
 
     // answers
     suspend fun answers(filledForm: String) =
@@ -156,9 +156,19 @@ class DataRepository(
     suspend fun offers(page: Int) =
             apiInterface.offers(page)
 
-    suspend fun createOffer(number: String , precent: String) =
-            apiInterface.createOffer(number , precent)
+    suspend fun createOffer(number: String , precent: String , massageId: String , startTime: String , expireTime: String ) =
+            apiInterface.createOffer(number , precent , massageId , startTime , expireTime)
 
     suspend fun deleteOffer(id: String) =
             apiInterface.deleteOffer(id)
+
+    suspend fun reservedOrders(page: Int) =
+            apiInterface.reservedOrders(page)
+
+    // consulting
+    suspend fun getConsulting() =
+        apiInterface.getConsulting()
+
+    suspend fun setConsultingUser(userId: String) =
+        apiInterface.setConsultingUser(userId)
 }

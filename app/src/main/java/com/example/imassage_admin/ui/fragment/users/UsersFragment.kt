@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -15,11 +16,13 @@ import com.android.volley.NetworkResponse
 import com.arlib.floatingsearchview.FloatingSearchView
 import com.bumptech.glide.Glide
 import com.example.imassage_admin.R
+import com.example.imassage_admin.data.model.User
 import com.example.imassage_admin.data.remote.model.NetworkState
 import com.example.imassage_admin.databinding.FragmentUsersBinding
 import com.example.imassage_admin.ui.adapter.paging.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.example.imassage_admin.ui.utils.StaticVariables
 import kotlinx.android.synthetic.main.fragment_users.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -85,15 +88,11 @@ class UsersFragment : ScopedFragment() , KodeinAware {
             }
         )
         adapter.onClickHandler = object :  OnCLickHandler<Any> {
+            override fun onClick(view: View) {}
+            override fun onClickView(view: View, element: Any) {}
             override fun onClickItem(element: Any) {
+                navController.navigate(R.id.action_usersFragment_to_historyFragment , bundleOf(StaticVariables.RESERVE_TYPE to (element as User).id))
             }
-
-            override fun onClick(view: View) {
-            }
-
-            override fun onClickView(view: View, element: Any) {
-            }
-
         }
     }
     private fun configureObservables() {

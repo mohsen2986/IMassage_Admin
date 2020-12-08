@@ -17,7 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:onClick="@{ (v) -> onClick.onClickItem(order)}">
+        android:onClick="@{ (v) -> onClick.onClickItem(order)}"
+        >
+
 
 
 
@@ -54,6 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/row_bills_name_family"
             tools:text="1399/05/03" />
 
+
         <TextView
             android:id="@+id/row_bills_time"
             android:layout_width="wrap_content"
@@ -65,9 +68,11 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{order.times.get(0).time}"
             app:layout_constraintEnd_toStartOf="@+id/row_bills_date"
             app:layout_constraintTop_toBottomOf="@+id/row_bills_name_family"
             tools:text="22:00" />
+
 
         <TextView
             android:id="@+id/row_bills_cost"
@@ -85,6 +90,7 @@
             app:layout_constraintEnd_toEndOf="@+id/row_bills_date"
             app:layout_constraintTop_toBottomOf="@+id/row_bills_package"
             tools:text="99,000 تومان" />
+
 
         <View
             android:id="@+id/view2"
@@ -111,6 +117,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{order.massage.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2"
@@ -127,6 +134,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{order.package_}"
             app:layout_constraintEnd_toEndOf="@+id/row_bills_massage"
             app:layout_constraintStart_toStartOf="@+id/row_bills_massage"
             app:layout_constraintTop_toBottomOf="@+id/row_bills_massage"

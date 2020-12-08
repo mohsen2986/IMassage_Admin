@@ -5,6 +5,11 @@
             name="onClick"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
+
+        <variable
+            name="imageUri"
+            type="android.net.Uri"
+            />
     </data>
 
 
@@ -80,6 +85,7 @@
                         android:id="@+id/imageView"
                         android:layout_width="@dimen/width_88_96_104"
                         android:layout_height="@dimen/width_88_96_104"
+                        android:setImageFromSD="@{imageUri}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

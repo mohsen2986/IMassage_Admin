@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.registerForm.RegisterFormFragment"
+    >
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fra_signUp_second_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_test"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_start_end"
+            android:layout_marginEnd="@dimen/card_margin_start_end"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/black_medium"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fra_register_form_layout_mobile"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_16_24_32_64"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/mobile_number"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:placeholderText="9*********"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16"
+                    app:startIconDrawable="@drawable/ic_mobile">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_signUp_second_mobile"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fra_register_form_layout_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_8_8_8_16"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:hint="@string/password"
+                    android:layoutDirection="rtl"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_outline"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_register_form_layout_mobile"
+                    app:passwordToggleEnabled="true"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_signUp_second_password"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textAlignment="viewEnd" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fra_register_form_layout_confirm_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_8_8_8_16"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:hint="@string/confirm_password"
+                    android:layoutDirection="rtl"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/ic_error_outline"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_register_form_layout_password"
+                    app:passwordToggleEnabled="true"
+                    app:placeholderTextAppearance="@style/TextAppearance.AppCompat.TextView.normal_16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fra_signUp_second_confirm_password"
+                        style="@style/TextAppearance.AppCompat.TextView.bold_16"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textAlignment="viewEnd"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_register_form_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8_16_16_32"
+                    android:layout_marginBottom="@dimen/margin_16_24_32_64"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    style="@style/Widget.MaterialComponents.Button.Customize"
+                    android:text="@string/next"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/fra_register_form_layout_confirm_password"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_register_form_layout_confirm_password" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/fra_register_form_show_status"
+                    android:layout_width="@dimen/width_24_24_28_40"
+                    android:layout_height="@dimen/width_24_24_28_40"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_register_form_next"
+                    app:layout_constraintEnd_toEndOf="@+id/fra_register_form_next"
+                    app:layout_constraintStart_toStartOf="@+id/fra_register_form_next"
+                    app:layout_constraintTop_toTopOf="@+id/fra_register_form_next" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fra_register_form_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/back"
+                    android:textSize="@dimen/text_14_16_16_20"
+                    android:paddingEnd="@dimen/margin_16_24_32_40"
+                    android:paddingStart="@dimen/margin_16_24_32_40"
+                    android:paddingTop="@dimen/margin_4_4_4_8"
+                    android:paddingBottom="@dimen/margin_4_4_4_8"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_register_form_next"
+                    app:layout_constraintEnd_toStartOf="@+id/fra_register_form_next"
+                    app:layout_constraintTop_toTopOf="@+id/fra_register_form_next" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

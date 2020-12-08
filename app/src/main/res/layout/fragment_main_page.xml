@@ -6,6 +6,10 @@
     >
     <data>
         <variable
+            name="order"
+            type="com.example.imassage_admin.data.model.Order"
+            />
+        <variable
             name="onClick"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
@@ -81,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="@dimen/margin_12_16_16_32"
                     android:paddingVertical="@dimen/margin_12_16_16_32"
+                    android:onClick="@{onClick::onClick}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textView5">
@@ -182,12 +187,13 @@
                         android:text="@string/reservationn"
                         android:textSize="@dimen/text_14_16_18_24"
                         android:textStyle="bold"
+                        android:onClick="@{onClick::onClick}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/fra_main_page_slider"
+                        android:id="@+id/fra_main_page_aboutUs"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="@dimen/margin_8_8_8_16"
@@ -195,12 +201,12 @@
                         android:backgroundTint="@color/blue_50"
                         android:onClick="@{onClick::onClick}"
                         app:cardCornerRadius="@dimen/margin_8_12_16_24"
-                        app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintBottom_toBottomOf="@+id/fra_main_page_slider"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintEnd_toStartOf="@+id/fra_main_page_slider"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/fra_main_page_aboutUs"
+                        app:layout_constraintTop_toTopOf="@+id/fra_main_page_slider"
                         app:strokeColor="@color/overlay_dark_40"
                         app:strokeWidth="@dimen/margin_1_1_2_3">
 
@@ -223,7 +229,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/fra_main_page_aboutUs"
+                        android:id="@+id/fra_main_page_slider"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="@dimen/margin_4_4_4_8"
@@ -235,7 +241,7 @@
                         app:layout_constraintDimensionRatio="w,1:2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/fra_main_page_slider"
+                        app:layout_constraintStart_toEndOf="@+id/fra_main_page_aboutUs"
                         app:layout_constraintTop_toBottomOf="@+id/fra_main_page_reserved"
                         app:strokeColor="@color/overlay_dark_40"
                         app:strokeWidth="@dimen/margin_1_1_2_3">

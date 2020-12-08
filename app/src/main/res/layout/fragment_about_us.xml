@@ -13,6 +13,10 @@
             name="onClickHandler"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
+        <variable
+            name="imageUri"
+            type="android.net.Uri"
+            />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:loadImage="@{aboutUs.image}"
+                android:setImageFromSD="@{imageUri}"
                 tools:srcCompat="@tools:sample/avatars"
                 />
 <!--            android:loadImage="@{aboutUs.image}"-->

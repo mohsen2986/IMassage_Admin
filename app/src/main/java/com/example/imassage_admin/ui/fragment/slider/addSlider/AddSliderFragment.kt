@@ -6,11 +6,14 @@ import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.imassage_admin.BuildConfig
@@ -88,6 +91,7 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
                     mediaPath = cursor.getString(columnIndex)
                     // Set the Image in ImageView for Previewing the Media
 //                    imageView.setImageBitmap(BitmapFactory.decodeFile(mediaPath))
+                    binding.imageUri = fileUri
                     cursor.close()
                     postPath = mediaPath
                 }
@@ -115,11 +119,10 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
                 )
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
-                val description_ = "we are fcosiety"
 
                 val description = fra_add_slide_text.text.toString()
 
-                viewModel.uploadSlider(body , description_ , description)
+                viewModel.uploadSlider(body , description , description)
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
@@ -142,9 +145,15 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
                     }
                 }
             }
-
-
         }
+        fra_add_slide_text.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(p0: Editable?) {
+                fra_add_slide_textView.text = fra_add_slide_text.text.toString()
+            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        })
     }
 
 

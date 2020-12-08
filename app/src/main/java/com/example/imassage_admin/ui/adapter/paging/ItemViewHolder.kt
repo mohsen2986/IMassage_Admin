@@ -9,7 +9,10 @@ import com.example.imassage_admin.ui.utils.OnCLickHandler
 class ItemViewHolder(
     private val itemViewBinding: RowItemBinding
 ):RecyclerView.ViewHolder(itemViewBinding.root){
-    fun bind(item: User, onClick: OnCLickHandler<User>?){
+    fun bind(item: User, onClick: OnCLickHandler<Any>?){
         itemViewBinding.user = item
+        onClick?.let {
+            itemViewBinding.onClick = onClick
+        }
     }
 }

@@ -12,7 +12,7 @@ data class Package(
         @SerializedName("cost")
         val cost: String ,
         @SerializedName("massage_id")
-        val massageId: String ,
+        val massageId: Massage ,
         @SerializedName("id")
         val packageId: String
 

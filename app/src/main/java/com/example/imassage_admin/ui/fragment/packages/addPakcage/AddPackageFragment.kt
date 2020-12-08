@@ -54,6 +54,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var massages: List<Massage>
     private lateinit var selectedMassage: String
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -75,13 +76,14 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
         bindUI()
         uiActions()
 
-//        setFragmentResult("requestKey", bundleOf("bundleKey" to StaticVariables.REFRESH))
-//        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
-//            override fun handleOnBackPressed() {
+        setFragmentResult("requestKey", bundleOf("bundleKey" to StaticVariables.REFRESH))
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
+            override fun handleOnBackPressed() {
 //                 Handle the back button event
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+                requireActivity().onBackPressed()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
     private fun bindUI() =launch {
@@ -113,7 +115,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
                 val body = MultipartBody.Part.createFormData("image", imageFile.name , requestBody)
 
                 viewModel.uploadPackages(body , fra_add_package_packageName.text.toString() , fra_add_package_description.text.toString()
-                        , fra_add_package_cost.text.toString() , selectedMassage)
+                        , fra_add_package_cost.text.toString() , selectedMassage , fra_add_package_length.text.toString() )
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }
@@ -141,6 +143,8 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
                     mediaPath = cursor.getString(columnIndex)
                     // Set the Image in ImageView for Previewing the Media
 //                    imageView.setImageBitmap(BitmapFactory.decodeFile(mediaPath))
+                    binding.imageUri = fileUri
+
                     cursor.close()
                     postPath = mediaPath
                 }
@@ -159,6 +163,7 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
     }
     private fun getMassageId(massageName: String) =
         massages.find { it.name == massageName }!!.id
+
     private fun uiActions(){
         binding.onClick = object: OnCLickHandler<Nothing>{
             override fun onClickItem(element: Nothing) {}
@@ -177,8 +182,5 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
             Toast.makeText(context ,"${parent?.getItemAtPosition(position)}" , Toast.LENGTH_LONG).show()
             selectedMassage = getMassageId(parent?.getItemAtPosition(position).toString())
         }
-
     }
-
-
 }
