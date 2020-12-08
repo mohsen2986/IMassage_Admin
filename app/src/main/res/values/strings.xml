@@ -100,6 +100,14 @@
     <string name="price">قیمت</string>
     <string name="config_time">پیکربندی زمان</string>
     <string name="active">فعال</string>
+    <string name="_00">00:00</string>
+    <string name="_01">01:00</string>
+    <string name="_02">02:00</string>
+    <string name="_03">03:00</string>
+    <string name="_04">04:00</string>
+    <string name="_05">05:00</string>
+    <string name="_06">06:00</string>
+    <string name="_07">07:00</string>
     <string name="_08">08:00</string>
     <string name="_09">09:00</string>
     <string name="_10">10:00</string>
@@ -115,6 +123,7 @@
     <string name="_20">20:00</string>
     <string name="_21">21:00</string>
     <string name="_22">22:00</string>
+    <string name="_23">23:00</string>
     <string name="config_date">پیکربندی روزها</string>
     <string name="_sat">شنبه</string>
     <string name="_sun">یکشنبه</string>

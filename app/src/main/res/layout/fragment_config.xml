@@ -76,1175 +76,1686 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayout2">
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="-101dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+
+                <TextView
+                    android:id="@+id/row_config_time"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_08"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_08"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:checked="@{config.h8.equals(`0`)? true : false}"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_08"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_08"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_08"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_08"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_09"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_09"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h9.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/textView10"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_09"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_09"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_09"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_09"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_10"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h10.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_10"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_10"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_10"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_10"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_11"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h11.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_11"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_11"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_11"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_11"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_12"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h12.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_12"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_12"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_12"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_12"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_13"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h13.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_13"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_13"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_13"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_13"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_14"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h14.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_14"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_14"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_14"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_14"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_15"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h15.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_15"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_15"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_15"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_15"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_16"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h16.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_16"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_16"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_16"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_16"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_17"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h17.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_17"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_17"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_17"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_17"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_18"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h18.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_18"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_18"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_18"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_18"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_19"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h19.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_19"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_19"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_19"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_19"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_20"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h20.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_20"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_20"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_20"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_20"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_21"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h21.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_21"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_21"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_21"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_21"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/row_config_time_22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/margin_12_16_16_32"
-                            android:drawableEnd="@drawable/ic_clock_row_reserved"
-                            android:drawablePadding="@dimen/margin_4_4_4_8"
-                            android:text="@string/_22"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:id="@+id/fra_config_active_22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:checked="@{config.h22.equals(`0`) ?  true : false}"
-                            android:enabled="true"
-                            android:text="@string/active"
-                            android:textColor="@color/black_low"
-                            android:textSize="@dimen/text_14_16_18_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/row_config_time_22"
-                            app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_22"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:switchPadding="@dimen/margin_4_4_4_8" />
-
-
-                        <com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/fra_config_toggle_22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_12_16_16_32"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:selectionRequired="true"
-                            app:singleSelection="true">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_woman_22"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layoutDirection="rtl"
-                                android:paddingStart="@dimen/margin_8_16_16_32"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingEnd="@dimen/margin_8_16_16_32"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_woman"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/fra_config_man_22"
-                                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/margin_4_6_8_12"
-                                android:paddingBottom="@dimen/margin_4_6_8_12"
-                                android:textSize="@dimen/text_14_16_16_20"
-                                app:icon="@drawable/ic_man"
-                                app:iconSize="@dimen/width_24_24_28_40" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_00"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_00" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h8.equals(`0`)? true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_00"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_00"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_00"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_00"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_01"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_01"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_01" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_01"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_00"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_01"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_01"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_01"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_02"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_02"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_02" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_02"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_01"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_02"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_02"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_02"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_02"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_03"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_03"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_03" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_03"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_02"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_03"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_03"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_03"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_03"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_04"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_04"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_04" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_04"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_03"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_04"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_04"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_04"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_04"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_05"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_05" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_05"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_04"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_05"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_05"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_05"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_06"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_06"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_06" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_06"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_05"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_06"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_06"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_06"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_06"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_07"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_07"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_07" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_07"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_06"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_07"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_07"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_07"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_08"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_08"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_08" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_08"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_07"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_08"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_08"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_08"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_08"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_09"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_09"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_09" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h9.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_09"
+                    app:layout_constraintTop_toBottomOf="@id/fra_config_active_08"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_09"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_09"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_09"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_09"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_10"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_10" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h10.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_10"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_10"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_09"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_10"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_10"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_10"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_11"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_11"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_11" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h11.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_11"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_11"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_10"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_11"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_11"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_11"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_12"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_12" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h12.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_12"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_12"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_11"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_12"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_12"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_12"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_13"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_13" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h13.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_13"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_13"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_12"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_13"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_13"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_13"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_14"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_14" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h14.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_14"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_14"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_13"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_14"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_14"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_14"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_15"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_15" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h15.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_15"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_15"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_14"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_15"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_15"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_15"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_16"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_16" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h16.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_16"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_16"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_15"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_16"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_16"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_16"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_17"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_17"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_17"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h17.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_17"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_17"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_16"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_17"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_17"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_17"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_17"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_18"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_18" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h18.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_18"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_18"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_17"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_18"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_18"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_18"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_19"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_19"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_19" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h19.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_19"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_19"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_18"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_19"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_19"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_19"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_19"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_20"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_20" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h20.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_20"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_20"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_19"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_20"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_20"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_20"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_21"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_21"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_21" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h21.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_21"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_21"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_20"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_21"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_21"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_21"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_21"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+                <TextView
+                    android:id="@+id/row_config_time_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_22"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_22"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_22" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h22.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_22"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_22"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_21"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_22"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_22"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_22"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_22"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+<TextView
+                    android:id="@+id/row_config_time_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_12_16_16_32"
+                    android:drawableEnd="@drawable/ic_clock_row_reserved"
+                    android:drawablePadding="@dimen/margin_4_4_4_8"
+                    android:text="@string/_23"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fra_config_active_23"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fra_config_active_23" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fra_config_active_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="@{config.h22.equals(`0`) ?  true : false}"
+                    android:enabled="true"
+                    android:text="@string/active"
+                    android:textColor="@color/black_low"
+                    android:textSize="@dimen/text_14_16_18_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/row_config_time_23"
+                    app:layout_constraintStart_toEndOf="@+id/fra_config_toggle_23"
+                    app:layout_constraintTop_toBottomOf="@+id/fra_config_active_22"
+                    app:switchPadding="@dimen/margin_4_4_4_8" />
+
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/fra_config_toggle_23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_12_16_16_32"
+                    app:layout_constraintBottom_toBottomOf="@id/fra_config_active_23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fra_config_active_23"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_woman_23"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:paddingStart="@dimen/margin_8_16_16_32"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingEnd="@dimen/margin_8_16_16_32"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_woman"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fra_config_man_23"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4_6_8_12"
+                        android:paddingBottom="@dimen/margin_4_6_8_12"
+                        android:textSize="@dimen/text_14_16_16_20"
+                        app:icon="@drawable/ic_man"
+                        app:iconSize="@dimen/width_24_24_28_40" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
