@@ -123,6 +123,7 @@
     <string name="_20">20:00</string>
     <string name="_21">21:00</string>
     <string name="_22">22:00</string>
+    <string name="_23">23:00</string>
     <string name="config_date">پیکربندی روزها</string>
     <string name="_sat">شنبه</string>
     <string name="_sun">یکشنبه</string>
