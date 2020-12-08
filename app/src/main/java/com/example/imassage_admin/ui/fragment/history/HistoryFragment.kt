@@ -20,6 +20,7 @@ import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.example.imassage_admin.ui.utils.StaticVariables
 import kotlinx.android.synthetic.main.fragment_history.*
+import kotlinx.android.synthetic.main.row_order.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -86,7 +87,11 @@ class HistoryFragment : ScopedFragment() , KodeinAware {
                 )
             }
             override fun onClick(view: View) {}
-            override fun onClickView(view: View, element: Any) {}
+            override fun onClickView(view: View, element: Any) {
+                when(view){
+                    row_bills_name_family -> configViewModel((element as Order).user.id)
+                }
+            }
         }
     }
     private fun configureObservables() {

@@ -10,6 +10,6 @@ class OfferViewHolder(
         private val itemViewBinding: RowOfferBinding
 ): RecyclerView.ViewHolder(itemViewBinding.root){
     fun bind(item: Offer, onClick: OnCLickHandler<Any>?){
-//        itemViewBinding.offer= item
+        itemViewBinding.offer = item
     }
 }

@@ -80,7 +80,10 @@ class AddPackageFragment : ScopedFragment() , KodeinAware{
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
             override fun handleOnBackPressed() {
 //                 Handle the back button event
-                requireActivity().onBackPressed()
+                if (isEnabled) {
+                    isEnabled = false
+                    requireActivity().onBackPressed()
+                }
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)

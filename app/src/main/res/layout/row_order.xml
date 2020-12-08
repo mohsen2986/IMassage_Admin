@@ -34,6 +34,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:onClick="@{ (v) -> onClick.onClickView( v , order )}"
             android:text="@{order.user.name.concat(order.user.family)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

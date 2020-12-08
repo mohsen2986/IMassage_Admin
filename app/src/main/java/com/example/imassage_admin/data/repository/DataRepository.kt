@@ -1,7 +1,14 @@
 package com.example.imassage_admin.data.repository
 
+import android.os.Environment
+import android.util.Log
 import com.example.imassage_admin.data.remote.api.AuthApiInterface
+import com.haroldadmin.cnradapter.NetworkResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import okhttp3.MultipartBody
+import okhttp3.ResponseBody
+import java.io.*
 
 class DataRepository(
     private val apiInterface: AuthApiInterface
@@ -171,4 +178,60 @@ class DataRepository(
 
     suspend fun setConsultingUser(userId: String) =
         apiInterface.setConsultingUser(userId)
+
+    // download Users as PDF
+
+    suspend fun downloadUsersPdf():Boolean =  withContext(Dispatchers.IO) {
+            val response = apiInterface.downloadUsers()
+            val name = "users.pdf"
+            when (response) {
+                is NetworkResponse.Success -> saveToDisk(response.body, name)
+                else -> false
+            }
+
+    }
+
+
+    private suspend fun saveToDisk(body: ResponseBody, filename: String): Boolean {
+        val TAG = "SAVE_TO_DISK"
+        try {
+            val destinationFile = File(
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                    filename
+            )
+            var inputStream: InputStream? = null
+            var outputStream: OutputStream? = null
+            try {
+                inputStream = body.byteStream()
+                outputStream = FileOutputStream(destinationFile)
+                val data = ByteArray(4096)
+                var count: Int
+                var progress = 0
+                val fileSize = body.contentLength()
+                Log.d(TAG, "File Size=$fileSize")
+                while (inputStream.read(data).also { count = it } != -1) {
+                    outputStream.write(data, 0, count)
+                    progress += count
+                    Log.d(
+                            TAG,
+                            "Progress: " + progress + "/" + fileSize + " >>>> " + progress.toFloat() / fileSize
+                    )
+                }
+                outputStream.flush()
+                Log.d(TAG, destinationFile.parent)
+                return true
+            } catch (e: IOException) {
+                e.printStackTrace()
+                Log.d(TAG, "Failed to save the file!")
+                return false
+            } finally {
+                inputStream?.close()
+                outputStream?.close()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Log.d(TAG, "Failed to save the file!")
+            return false
+        }
+    }
 }

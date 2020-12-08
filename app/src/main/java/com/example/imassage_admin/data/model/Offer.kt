@@ -10,5 +10,11 @@ data class Offer(
         @SerializedName("validate")
         val validate: String ,
         @SerializedName("offer")
-        val offer: String
+        val offer: String ,
+        @SerializedName("massage")
+        val massage: String ,
+        @SerializedName("start_date")
+        val startDate: String ,
+        @SerializedName("expire_date")
+        val expireDate: String
 )

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
@@ -23,6 +24,7 @@ import com.example.imassage_admin.ui.adapter.paging.RecyclerAdapter
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
 import com.example.imassage_admin.ui.utils.StaticVariables
+import com.example.imassage_admin.ui.utils.askForPermission
 import kotlinx.android.synthetic.main.fragment_users.*
 import kotlinx.coroutines.launch
 import org.kodein.di.Kodein
@@ -60,6 +62,7 @@ class UsersFragment : ScopedFragment() , KodeinAware {
         configViewModel("")
         configureObservables()
         initAdapter()
+        uiActions()
 //        bindUI()
 //        user_recycler.adapter = adapter
         fra_users_recycler.adapter = adapter
@@ -68,6 +71,20 @@ class UsersFragment : ScopedFragment() , KodeinAware {
         when(val callback = viewModel.users(3)){
             is com.haroldadmin.cnradapter.NetworkResponse.Success ->
                 Log.e("Log__" , "${callback.body}")
+        }
+    }
+    private fun uiActions(){
+        binding.onClick = object: OnCLickHandler<Nothing>{
+            override fun onClickItem(element: Nothing) {}
+            override fun onClickView(view: View, element: Nothing) {}
+            override fun onClick(view: View) {
+                when(view){
+                    textView4 -> {
+                        getStoragePermission()
+                        downloadUsersPdf()
+                    }
+                }
+            }
         }
     }
 
@@ -129,6 +146,15 @@ class UsersFragment : ScopedFragment() , KodeinAware {
                 }
             }
         }*/
+    }
+    private fun downloadUsersPdf() = launch {
+        if(viewModel.downloadUsers())
+            Toast.makeText(requireContext() , "فایل ذخیره شد." , Toast.LENGTH_SHORT).show()
+        else
+            Toast.makeText(requireContext() , "مشکل در ذخیره فایل" , Toast.LENGTH_SHORT).show()
+    }
+    private fun getStoragePermission(){
+        askForPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE , 101 , requireActivity())
     }
 
 

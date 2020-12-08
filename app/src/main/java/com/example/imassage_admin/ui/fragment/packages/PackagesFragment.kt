@@ -156,9 +156,9 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
             }
         }
         setFragmentResultListener("requestKey") { requestKey, bundle ->
-            // We use a String here, but any type that can be put in a Bundle is supported
+//             We use a String here, but any type that can be put in a Bundle is supported
             val result = bundle.getString("bundleKey")
-            // Do something with the result
+//             Do something with the result
             if(result == StaticVariables.REFRESH){
                 bindUI()
             }

@@ -5,6 +5,7 @@ import com.example.imassage_admin.data.remote.model.*
 import com.haroldadmin.cnradapter.NetworkResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.http.*
 
 interface AuthApiInterface{
@@ -216,4 +217,10 @@ interface AuthApiInterface{
     suspend fun setConsultingUser(
         @Query("user") userId: String
     ): NetworkResponse< Unit , ErrorResponse>
+
+    // download users as PDF
+    @GET
+    suspend fun downloadUsers(
+            @Url url:String = "http://www.paarandco.ir/IMassage/api/getPdf"
+    ): NetworkResponse<ResponseBody, ResponseBody>
 }

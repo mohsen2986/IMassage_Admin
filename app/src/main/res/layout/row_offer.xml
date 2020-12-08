@@ -5,8 +5,10 @@
 
     <data>
         <variable
-            name="isUsed"
-            type="java.lang.Boolean" />
+            name="offer"
+            type="com.example.imassage_admin.data.model.Offer"
+            />
+        <import type="com.example.imassage_admin.R" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +29,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{offer.massage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="توکن تخفیف" />
@@ -43,6 +46,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{offer.code}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_offer_token"
             tools:text="5 درصد" />
@@ -61,6 +65,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{offer.massage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_offer_percent"
@@ -78,6 +83,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{offer.startDate}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row_offer_massage"
@@ -92,6 +98,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
+            android:text="@{offer.expireDate}"
             app:layout_constraintBottom_toBottomOf="@+id/row_offer_start_date"
             app:layout_constraintEnd_toStartOf="@+id/row_offer_start_date"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,9 +119,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@{offer.validate.equals(`1`) ? @drawable/green_background : @drawable/red_background}"
                 />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-<!--                app:srcCompat="@{isUsed?@color/red_400:@color/green_400}" />
--->

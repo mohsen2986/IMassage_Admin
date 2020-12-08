@@ -52,4 +52,7 @@ class UsersViewModel(
     suspend fun users(page: Int?) =
             dataRepository.users(page)
 
+    suspend fun downloadUsers() =
+            dataRepository.downloadUsersPdf()
+
 }

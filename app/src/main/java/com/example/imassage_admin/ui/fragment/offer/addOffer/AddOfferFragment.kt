@@ -41,6 +41,7 @@ class AddOfferFragment : ScopedFragment() , KodeinAware {
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var massages: List<Massage>
     private lateinit var selectedMassage: String
+
     private var calendarType: DatePickerDialog.Type = DatePickerDialog.Type.JALALI
 
     override fun onCreateView(
