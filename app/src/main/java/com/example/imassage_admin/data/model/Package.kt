@@ -14,6 +14,8 @@ data class Package(
         @SerializedName("massage_id")
         val massageId: Massage ,
         @SerializedName("id")
-        val packageId: String
+        val packageId: String ,
+        @SerializedName("have_time_configs")
+        val timeConfigs: String
 
 )

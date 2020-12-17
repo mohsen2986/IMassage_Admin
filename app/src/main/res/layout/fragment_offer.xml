@@ -85,6 +85,18 @@
             android:textColor="@color/blue_50"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fra_users_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="15dp"
+            android:onClick="@{onClick::onClick}"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/stat_sys_download_done" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

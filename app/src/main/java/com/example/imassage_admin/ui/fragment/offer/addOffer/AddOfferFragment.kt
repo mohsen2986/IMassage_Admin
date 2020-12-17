@@ -130,7 +130,7 @@ class AddOfferFragment : ScopedFragment() , KodeinAware {
     private fun sendOffers() = launch{
 //        if(fra_add_offer_percent.text?.isNotEmpty()!! && fra_add_offer_numbers.text?.isNotEmpty()!! && fra_add_offer_end_date.text?.isNotEmpty()!! && fra_add_offer_start_date.text?.isNotEmpty()!!) {
             when (val callback = viewModel.createOffer(fra_add_offer_numbers.text.toString(), fra_add_offer_percent.text.toString() ,
-                    "2" , fra_add_offer_start_date.text.toString() , fra_add_offer_end_date.text.toString())
+                    selectedMassage , fra_add_offer_start_date.text.toString() , fra_add_offer_end_date.text.toString())
                 ) {
                 is NetworkResponse.Success -> {
                     Toast.makeText(context, "با موفقست ساخته شد.", Toast.LENGTH_SHORT).show()

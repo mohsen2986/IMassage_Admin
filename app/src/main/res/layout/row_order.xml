@@ -34,8 +34,8 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
-            android:onClick="@{ (v) -> onClick.onClickView( v , order )}"
-            android:text="@{order.user.name.concat(order.user.family)}"
+            android:onClick="@{ (v) -> onClick.onClickView(v, order )}"
+            android:text="@{order.user.name.concat(` `).concat(order.user.family)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="فااا يزه" />
@@ -69,7 +69,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/text_14_16_18_24"
             android:textStyle="bold"
-            android:text="@{order.times.get(0).time}"
+            android:text="@{order.times.get(0).time.substring(1).concat(`: ساعت`)}"
             app:layout_constraintEnd_toStartOf="@+id/row_bills_date"
             app:layout_constraintTop_toBottomOf="@+id/row_bills_name_family"
             tools:text="22:00" />

@@ -79,7 +79,7 @@ class UsersFragment : ScopedFragment() , KodeinAware {
             override fun onClickView(view: View, element: Nothing) {}
             override fun onClick(view: View) {
                 when(view){
-                    textView4 -> {
+                    fra_users_download  -> {
                         getStoragePermission()
                         downloadUsersPdf()
                     }

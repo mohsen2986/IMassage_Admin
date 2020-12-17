@@ -105,6 +105,9 @@
         <action
             android:id="@+id/action_packagesFragment_to_addPackageFragment"
             app:destination="@id/addPackageFragment" />
+        <action
+            android:id="@+id/action_packagesFragment_to_massageTimeConfigFragment"
+            app:destination="@id/massageTimeConfigFragment" />
     </fragment>
     <fragment
         android:id="@+id/massageFragment"
@@ -173,9 +176,6 @@
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_registerFormFragment"
-            app:destination="@id/registerFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/phoneVerificationFragment"
@@ -227,5 +227,16 @@
     <fragment
         android:id="@+id/consultingUsersFragment"
         android:name="com.example.imassage_admin.ui.fragment.ConsultingUsers.ConsultingUsersFragment"
-        android:label="ConsultingUsersFragment" />
+        android:label="ConsultingUsersFragment"
+        >
+        <argument
+            android:name="package_id"
+            app:argType="string"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/massageTimeConfigFragment"
+        android:name="com.example.imassage_admin.ui.fragment.massageTimeConfig.MassageTimeConfigFragment"
+        android:label="MassageTimeConfigFragment" />
 </navigation>

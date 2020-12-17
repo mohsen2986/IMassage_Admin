@@ -9,6 +9,7 @@
             name="onClick"
             type="com.example.imassage_admin.ui.utils.OnCLickHandler"
             />
+        <import type="android.view.View"/>
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/row_packages_container"
@@ -116,10 +117,20 @@
         android:padding="@dimen/margin_8_8_8_16"
         android:tint="@color/black_low"
         android:elevation="4dp"
-        android:onClick="@{(v) -> onClick.onClickItem(packages)}"
+        android:onClick="@{(v)->onClick.onClickView(v , packages)}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_delete" />
+    <ImageView
+        android:id="@+id/row_packages_time_config"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="@{(v) -> onClick.onClickView( v , packages)}"
+        android:background="@{packages.timeConfigs.equals(`true`) ? @drawable/green_background : @drawable/red_background}"
+        app:layout_constraintTop_toBottomOf="@id/row_packages_delete"
+        app:layout_constraintStart_toStartOf="@id/row_packages_delete"
+        app:layout_constraintEnd_toEndOf="@id/row_packages_delete"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

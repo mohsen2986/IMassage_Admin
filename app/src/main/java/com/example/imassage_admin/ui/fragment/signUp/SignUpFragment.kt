@@ -52,7 +52,6 @@ class SignUpFragment : ScopedFragment() , KodeinAware {
         uiActions()
     }
     private fun bindUI() = launch {
-        Log.d("log__" , "enter the page")
     }
     private fun uiActions(){
         fra_signUp_man_woman_group.checkedButtonId
@@ -68,7 +67,7 @@ class SignUpFragment : ScopedFragment() , KodeinAware {
                     "family" to fra_signUp_family.text.toString() ,
                     "gender" to gender
             )
-            navController.navigate(R.id.action_signUpFragment_to_registerFormFragment , bundle)
+//            navController.navigate(R.id.action_signUpFragment_to_registerFormFragment , bundle)
         }
         fra_signUp_go_to_login.setOnClickListener {
             hideKeyboard(it)

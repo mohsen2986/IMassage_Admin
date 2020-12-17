@@ -16,6 +16,7 @@ import com.example.imassage_admin.ui.fragment.login.LoginViewModelFactory
 import com.example.imassage_admin.ui.fragment.mainPage.MainPageViewModelFactory
 import com.example.imassage_admin.ui.fragment.massage.MassageViewModelFactory
 import com.example.imassage_admin.ui.fragment.massage.addMassage.AddMassageViewModelFactory
+import com.example.imassage_admin.ui.fragment.massageTimeConfig.MassageTimeConfigViewModelFactory
 import com.example.imassage_admin.ui.fragment.offer.OfferViewModelFactory
 import com.example.imassage_admin.ui.fragment.offer.addOffer.AddOfferViewModelFactory
 import com.example.imassage_admin.ui.fragment.packages.PackageViewModelFactory
@@ -88,6 +89,7 @@ class IMassageAdminApplication(
         bind() from provider { OfferViewModelFactory(instance())}
         bind() from provider { AddOfferViewModelFactory(instance())}
         bind() from provider { ConsultingUsersViewModelFactory(instance())}
+        bind() from provider { MassageTimeConfigViewModelFactory(instance())}
     }
 
     override fun onCreate() {

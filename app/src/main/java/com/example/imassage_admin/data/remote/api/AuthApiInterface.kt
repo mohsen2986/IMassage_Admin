@@ -210,6 +210,11 @@ interface AuthApiInterface{
             @Query("expire_date") expireTime: String
     ): NetworkResponse< OfferResponse , ErrorResponse>
 
+    @GET
+    suspend fun downloadOfferPdf(
+            @Url url:String = "http://www.paarandco.ir/IMassage/api/offer"
+    ): NetworkResponse<ResponseBody, ResponseBody>
+
     @GET("offer")
     suspend fun offers(
             @Query("page") page: Int?
@@ -241,4 +246,64 @@ interface AuthApiInterface{
     suspend fun downloadUsers(
             @Url url:String = "http://www.paarandco.ir/IMassage/api/getPdf"
     ): NetworkResponse<ResponseBody, ResponseBody>
+
+    // send time config for package
+    @POST("time_config")
+    suspend fun timeConfig(
+            @Query("package") package_: String
+    ):NetworkResponse< TimeConfig , ErrorResponse>
+
+    // update time config
+    @POST("set_time_config")
+    suspend fun updateTimeConfig(
+            @Query("package") package_: String ,
+            @Query("h1") h1: String ,
+            @Query("h1_gender") h1_gender: String ,
+            @Query("h2") h2: String ,
+            @Query("h2_gender") h2_gender: String ,
+            @Query("h3") h3: String ,
+            @Query("h3_gender") h3_gender: String ,
+            @Query("h4") h4: String ,
+            @Query("h4_gender") h4_gender: String ,
+            @Query("h5") h5: String ,
+            @Query("h5_gender") h5_gender: String ,
+            @Query("h6") h6: String ,
+            @Query("h6_gender") h6_gender: String ,
+            @Query("h7") h7: String ,
+            @Query("h7_gender") h7_gender: String ,
+            @Query("h8") h8: String ,
+            @Query("h8_gender") h8_gender: String ,
+            @Query("h9") h9: String ,
+            @Query("h9_gender") h9_gender: String ,
+            @Query("h10") h10: String ,
+            @Query("h10_gender") h10_gender: String ,
+            @Query("h11") h11: String ,
+            @Query("h11_gender") h11_gender: String ,
+            @Query("h12") h12: String ,
+            @Query("h12_gender") h12_gender: String ,
+            @Query("h13") h13: String ,
+            @Query("h13_gender") h13_gender: String ,
+            @Query("h14") h14: String ,
+            @Query("h14_gender") h14_gender: String ,
+            @Query("h15") h15: String ,
+            @Query("h15_gender") h15_gender: String ,
+            @Query("h16") h16: String ,
+            @Query("h16_gender") h16_gender: String ,
+            @Query("h17") h17: String ,
+            @Query("h17_gender") h17_gender: String ,
+            @Query("h18") h18: String ,
+            @Query("h18_gender") h18_gender: String ,
+            @Query("h19") h19: String ,
+            @Query("h19_gender") h19_gender: String ,
+            @Query("h20") h20: String ,
+            @Query("h20_gender") h20_gender: String ,
+            @Query("h21") h21: String ,
+            @Query("h21_gender") h21_gender: String ,
+            @Query("h22") h22: String ,
+            @Query("h22_gender") h22_gender: String ,
+            @Query("h23") h23: String ,
+            @Query("h23_gender") h23_gender: String ,
+            @Query("h24") h24: String ,
+            @Query("h24_gender") h24_gender: String
+    ):NetworkResponse< TimeConfig , ErrorResponse>
 }

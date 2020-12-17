@@ -2,6 +2,7 @@ package com.example.imassage_admin.ui.fragment.slider.addSlider
 
 import android.app.Activity
 import android.content.Intent
+import android.net.NetworkRequest
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -21,6 +22,7 @@ import com.example.imassage_admin.R
 import com.example.imassage_admin.databinding.FragmentAddSliderBinding
 import com.example.imassage_admin.ui.base.ScopedFragment
 import com.example.imassage_admin.ui.utils.OnCLickHandler
+import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.android.synthetic.main.fragment_add_slider.*
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -122,7 +124,9 @@ class AddSliderFragment : ScopedFragment() , KodeinAware{
 
                 val description = fra_add_slide_text.text.toString()
 
-                viewModel.uploadSlider(body , description , description)
+                when(viewModel.uploadSlider(body , description , description)){
+                    is NetworkResponse.Success -> requireActivity().onBackPressed()
+                }
             }else{
                 Toast.makeText(requireActivity(), "please select an image ", Toast.LENGTH_LONG).show()
             }

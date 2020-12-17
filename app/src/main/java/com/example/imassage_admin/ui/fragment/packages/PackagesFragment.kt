@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -136,10 +137,16 @@ class PackagesFragment : ScopedFragment() , KodeinAware {
         fra_package_recycler.adapter = adapter
         adapter.onClickHandler = object: OnCLickHandler<Package>{
             override fun onClick(view: View) {}
-            override fun onClickView(view: View, element: Package) {}
-            override fun onClickItem(element: Package) {
-                deletePackage(element.packageId)
-            }
+            override fun onClickView(view: View, element: Package) {
+                when(view.id){
+                    R.id.row_packages_time_config ->
+                        navController.navigate(R.id.action_packagesFragment_to_massageTimeConfigFragment ,
+                            bundleOf("PACKAGE_ID" to "${element.packageId}"))
+                    R.id.row_packages_delete ->
+                        deletePackage(element.packageId)
+                }
+        }
+            override fun onClickItem(element: Package) {}
         }
     }
     private fun uiActions(){

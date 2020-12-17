@@ -53,4 +53,7 @@ class OfferViewModel(
     suspend fun users(page: Int?) =
             dataRepository.users(page)
 
+    suspend fun downloadOfferPdf() =
+            dataRepository.downloadOfferPdf()
+
 }
