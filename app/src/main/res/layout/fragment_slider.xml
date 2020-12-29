@@ -15,15 +15,52 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.slider.SliderFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height_64_68_72_96"
+        android:background="@drawable/fra_reserved_curve_back">
+
+        <TextView
+            android:id="@+id/textView4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_offer"
+            android:textColor="@color/blue_50"
+            android:textSize="@dimen/text_16_18_18_28"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fra_slider_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back"
+            android:layout_width="@dimen/width_48_48_48_64"
+            android:layout_height="@dimen/width_48_48_48_64"
+            android:layout_marginStart="16dp"
+            android:padding="@dimen/padding_8_4_0"
+            android:tint="@color/blue_50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fra_slider_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_4_4_4_8"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
         tools:listitem="@layout/row_slides"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

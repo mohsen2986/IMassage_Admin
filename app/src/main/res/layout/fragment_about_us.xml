@@ -24,15 +24,52 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragment.aboutUs.AboutUsFragment">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appbar_height_64_68_72_96"
+            android:background="@drawable/fra_reserved_curve_back">
+
+            <TextView
+                android:id="@+id/textView4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_offer"
+                android:textColor="@color/blue_50"
+                android:textSize="@dimen/text_16_18_18_28"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/fra_aboutUs_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                android:layout_width="@dimen/width_48_48_48_64"
+                android:layout_height="@dimen/width_48_48_48_64"
+                android:layout_marginStart="16dp"
+                android:padding="@dimen/padding_8_4_0"
+                android:tint="@color/blue_50" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView2"
             android:layout_width="@dimen/width_120_152_176_304"
             android:layout_height="@dimen/width_120_152_176_304"
-            android:layout_marginTop="@dimen/margin_12_16_16_32"
+            android:layout_marginTop="@dimen/margin_8_8_8_16"
             app:cardCornerRadius="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
             app:strokeColor="@color/overlay_dark_30"
             app:strokeWidth="@dimen/margin_1_1_2_3">
 
@@ -45,8 +82,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_image"
-                />
+                app:srcCompat="@drawable/ic_image" />
 
             <ImageView
                 android:id="@+id/fra_aboutUs_image"
@@ -54,9 +90,8 @@
                 android:layout_height="match_parent"
                 android:loadImage="@{aboutUs.image}"
                 android:setImageFromSD="@{imageUri}"
-                tools:srcCompat="@tools:sample/avatars"
-                />
-<!--            android:loadImage="@{aboutUs.image}"-->
+                tools:srcCompat="@tools:sample/avatars" />
+            <!--            android:loadImage="@{aboutUs.image}"-->
 
         </com.google.android.material.card.MaterialCardView>
 

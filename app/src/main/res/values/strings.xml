@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Jazire Aramesh Admin</string>
-    <string name="massage_reservation">IMassage</string>
+    <string name="massage_reservation">Jazire Aramesh</string>
     <string name="mobile_number">شماره تلفن</string>
     <string name="password">رمز عبور</string>
     <string name="login">ورود</string>
     <string name="reset_password">رمز عبورم رو فراموش کرده‌ام!</string>
     <string name="signUp_before">قبلا ثبت‌نام کرده‌ام</string>
-    <string name="welcome_to_imassage">به IMassage خوش‌اومدی</string>
+    <string name="welcome_to_imassage">به جزیره آرامش خوش‌اومدی</string>
     <string name="insert_number_password_to_login">برای ورود شماره تلفن و رمزعبورت رو وارد کن</string>
     <string name="i_have_account">ورود به حساب کاربری</string>
     <string name="name">نام</string>
